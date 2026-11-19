@@ -18,6 +18,7 @@
     "astro": "^7.4.13"
   },
   "devDependencies": {
-    "@playwright/test": "1.65.1"
+    "@playwright/test": "1.65.1",
+    "acorn": "8.19.0"
   }
 }

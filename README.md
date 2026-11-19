@@ -26,10 +26,19 @@ Abre [localhost:4321](http://localhost:4321).
 | --- | --- |
 | `pnpm build` | Genera el sitio estático en `dist/`. |
 | `pnpm preview` | Sirve localmente la última compilación. |
-| `pnpm test` | Compila y comprueba el HTML, el módulo del cuestionario, la política de seguridad y la imagen social. |
+| `pnpm test` | Compila y comprueba el sitio y los datos de fuentes sin depender de la red. |
 | `pnpm test:e2e` | Compila y prueba el recorrido y el favicon en Firefox con Playwright. |
+| `node scripts/comprobar-enlaces.mjs` | Valida las candidaturas, posiciones y referencias sin conexión. |
+| `node scripts/comprobar-enlaces.mjs --enlaces` | Valida los datos y comprueba las fuentes públicas por red. |
+| `node scripts/comprobar-enlaces.mjs --help` | Muestra la ayuda del comprobador. |
 
 Para preparar las pruebas de navegador, instala Firefox una vez con `pnpm exec playwright install firefox`. Después ejecuta `pnpm test:e2e`. Si instalaste el navegador localmente con `PLAYWRIGHT_BROWSERS_PATH=0 pnpm exec playwright install firefox`, usa también `PLAYWRIGHT_BROWSERS_PATH=0 pnpm test:e2e`. Las pruebas sirven la compilación local y no necesitan visitar las fuentes externas.
+
+La validación offline detecta identificadores duplicados, programas o posiciones de candidaturas desconocidas, posiciones inválidas y fuentes o localizadores faltantes. `pnpm test` también analiza la sintaxis original con Acorn para detectar claves de candidatura duplicadas antes de que JavaScript las sobrescriba; el comprobador independiente y el flujo programado no necesitan dependencias. Una candidatura puede no tener programa verificado y las siglas pueden faltar.
+
+La auditoría de enlaces consulta cada URL única sin fragmento, secuencialmente, con pausas, un máximo de tres redirecciones y ocho segundos por enlace; cancela el cuerpo y no envía cookies ni credenciales. Solo usa IPv4 público, comprobado al conectar y en cada redirección; los hosts numéricos y puertos no estándar se rechazan. Los HTTP 404 y 410 se indican como **ausentes confirmados** y hacen fallar el comando; bloqueos, destinos rechazados, errores de red, tiempos agotados y otras respuestas no satisfactorias son **inconclusos**, no pruebas de ausencia. Los errores de datos también producen salida 1; una opción inválida produce salida 2. Las pruebas usan respuestas simuladas, no la red.
+
+El flujo de GitHub Actions comprueba las fuentes semanalmente y permite ejecución manual solo en la rama predeterminada. Revisa los resultados antes de corregir datos: una respuesta inconclusa puede ser un bloqueo automático, no un enlace roto.
 
 Para publicar la web, configura `pnpm build` como comando de compilación y `dist/` como directorio de salida. No hace falta un servidor Node.js en producción. Si cambia el dominio público, actualiza `site` en [`astro.config.mjs`](astro.config.mjs) para que la URL canónica y la vista previa social apunten al sitio correcto.
 
