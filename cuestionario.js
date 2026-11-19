@@ -338,10 +338,4 @@ form.addEventListener("submit", event => {
   showStage(quiz);
   renderQuestion();
 });
-document.querySelector(".brand").addEventListener("click", event => {
-  event.preventDefault();
-  showStage(hero);
-  focusOn(document.querySelector("#titulo"));
-});
-document.querySelector("#titulo").tabIndex = -1;
 renderCatalogue();
