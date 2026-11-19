@@ -21,6 +21,30 @@ function fixture() {
   };
 }
 
+const citasCorregidas = [
+  { id: '3.22', question: 'bullfightingFunding', parties: ['fa', 'fa-andaluz', 'fa-asturias', 'frente-amplio-fronte-ampla', 'frente-amplio-fronte-zabala'], locator: 'Apartado 5.7, Protección animal', page: 76, url: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf' },
+  { id: '5.07', question: 'nuclear', parties: ['eh-bildu'], locator: '§1.9.1 · Transición energética', page: 15, url: 'https://ehbildu.eus/media/dokumentuak/posibleegin-programa-cas.pdf' },
+  { id: '14.03', question: 'defence', parties: ['adelante-andalucia'], locator: 'Propuesta 578, p. 109', page: 109, url: 'https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf#page=109' },
+  { id: '18.01', question: 'workWeek', parties: ['pfac'], locator: 'Medida 16, p. 4', page: 4, url: 'https://www.feministasalcongreso.es/wp-content/uploads/2026/11/PROGRAMA_ELECTORAL.pdf' },
+  { id: '18.07', question: 'holidayHomeLimits', parties: ['pfac'], locator: 'Medida 31, p. 6', page: 6, url: 'https://www.feministasalcongreso.es/wp-content/uploads/2026/11/PROGRAMA_ELECTORAL.pdf' },
+  { id: '25.01', question: 'dental', parties: ['pacma'], locator: 'Apartado 3.2.7, p. 59', page: 59, url: 'https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf' },
+];
+
+for (const cita of citasCorregidas) {
+  test(`cita ${cita.id} señala el pasaje del programa electoral`, () => {
+    const question = programs.questions.find(({ id }) => id === cita.question);
+    assert.ok(question, cita.question);
+    for (const party of cita.parties) {
+      const position = question.positions[party];
+      assert.ok(position, party);
+      assert.equal(position.locator, cita.locator, party);
+      assert.equal(position.page, cita.page, party);
+      assert.equal(position.url ?? programs.parties[party].url, cita.url, party);
+      assert.deepEqual(position, question.positions[cita.parties[0]], party);
+    }
+  });
+}
+
 test('datos reales y excepciones legítimas son válidos sin red', () => {
   assert.deepEqual(validarDatos(roster, programs), []);
   const f = fixture();

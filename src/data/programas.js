@@ -755,8 +755,8 @@ export default {
         },
         "pfac": {
           "stance": "yes",
-          "locator": "Propuesta 7, p. 2",
-          "page": 2,
+          "locator": "Medida 16, p. 4",
+          "page": 4,
           "evidence": "Propone avanzar hacia una jornada laboral de 30 horas sin reducción salarial."
         },
         "nex": {
@@ -1122,7 +1122,7 @@ export default {
         },
         "eh-bildu": {
           "stance": "yes",
-          "locator": "§1.9.2 · Transición energética",
+          "locator": "§1.9.1 · Transición energética",
           "page": 15,
           "evidence": "Propone mantener el calendario de cierre de las centrales nucleares definido en el Plan Nacional Integrado de Energía y Clima."
         },
@@ -1434,10 +1434,10 @@ export default {
         },
         "adelante-andalucia": {
           "stance": "no",
-          "locator": "Propuesta 578, p. 108",
-          "page": 108,
+          "locator": "Propuesta 578, p. 109",
+          "page": 109,
           "evidence": "Rechaza el rearme europeo y propone reducir progresivamente el gasto militar.",
-          "url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf#page=108"
+          "url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf#page=109"
         },
         "ph": {
           "stance": "no",
@@ -1667,8 +1667,8 @@ export default {
         },
         "pacma": {
           "stance": "yes",
-          "locator": "Apartado 3.2.7, p. 58",
-          "page": 58,
+          "locator": "Apartado 3.2.7, p. 59",
+          "page": 59,
           "evidence": "Propone atención dental básica gratuita para toda la población y más prestaciones para personas vulnerables."
         },
         "ph": {
@@ -2306,31 +2306,31 @@ export default {
         },
         "fa": {
           "stance": "yes",
-          "locator": "Apartado 9, Protección animal",
+          "locator": "Apartado 5.7, Protección animal",
           "evidence": "Propone suprimir la financiación estatal directa e indirecta a la tauromaquia.",
           "page": 76
         },
         "fa-andaluz": {
           "stance": "yes",
-          "locator": "Apartado 9, Protección animal",
+          "locator": "Apartado 5.7, Protección animal",
           "evidence": "Propone suprimir la financiación estatal directa e indirecta a la tauromaquia.",
           "page": 76
         },
         "fa-asturias": {
           "stance": "yes",
-          "locator": "Apartado 9, Protección animal",
+          "locator": "Apartado 5.7, Protección animal",
           "evidence": "Propone suprimir la financiación estatal directa e indirecta a la tauromaquia.",
           "page": 76
         },
         "frente-amplio-fronte-ampla": {
           "stance": "yes",
-          "locator": "Apartado 9, Protección animal",
+          "locator": "Apartado 5.7, Protección animal",
           "evidence": "Propone suprimir la financiación estatal directa e indirecta a la tauromaquia.",
           "page": 76
         },
         "frente-amplio-fronte-zabala": {
           "stance": "yes",
-          "locator": "Apartado 9, Protección animal",
+          "locator": "Apartado 5.7, Protección animal",
           "evidence": "Propone suprimir la financiación estatal directa e indirecta a la tauromaquia.",
           "page": 76
         }
@@ -2445,8 +2445,8 @@ export default {
         },
         "pfac": {
           "stance": "yes",
-          "locator": "Medida 6, p. 1",
-          "page": 1,
+          "locator": "Medida 31, p. 6",
+          "page": 6,
           "evidence": "Incluye limitar el alquiler turístico entre sus propuestas de vivienda."
         }
       }
