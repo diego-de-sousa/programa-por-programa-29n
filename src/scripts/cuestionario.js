@@ -1,5 +1,6 @@
 import roster from "../data/candidaturas.js";
 import programas from "../data/programas.js";
+import { getComparison } from "./comparacion.js";
 
 const hero = document.querySelector(".hero");
 const form = document.querySelector("#start-form");
@@ -174,21 +175,6 @@ function renderQuestion() {
   focusOn(quiz.querySelector("h2"));
 }
 
-function getComparison(item) {
-  const applicable = activeQuestions.flatMap(question => {
-    const position = question.positions[item.id];
-    if (!position) return [];
-    const response = responses.get(question.id);
-    return [{ question, position, response }];
-  });
-  const comparable = applicable.filter(row => row.response === "yes" || row.response === "no");
-  const matching = comparable.filter(row => row.response === row.position.stance);
-  const disagreements = comparable.filter(row => row.response !== row.position.stance);
-  const omitted = applicable.filter(row => row.response !== "yes" && row.response !== "no");
-  const ratio = comparable.length ? matching.length / comparable.length : null;
-  return { item, comparable, matching, disagreements, omitted, ratio };
-}
-
 function withPage(url, page) {
   return page && /\.pdf(?:[?#]|$)|\/pdf\/|sdm_process_download/.test(url)
     ? `${url.split("#")[0]}#page=${page}`
@@ -263,7 +249,7 @@ function resultGroup(rows, title) {
 }
 
 function renderOrderedResults(candidates, order) {
-  const rows = candidates.map(getComparison);
+  const rows = candidates.map(item => getComparison(item, activeQuestions, responses));
   if (order === "alphabet") return resultGrid(rows);
   if (order === "ratio") {
     const scored = rows.filter(row => row.ratio !== null).sort((a, b) =>
