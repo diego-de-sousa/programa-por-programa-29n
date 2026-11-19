@@ -27,6 +27,9 @@ Abre [localhost:4321](http://localhost:4321).
 | `pnpm build` | Genera el sitio estático en `dist/`. |
 | `pnpm preview` | Sirve localmente la última compilación. |
 | `pnpm test` | Compila y comprueba el HTML, el módulo del cuestionario, la política de seguridad y la imagen social. |
+| `pnpm test:e2e` | Compila y prueba el recorrido y el favicon en Firefox con Playwright. |
+
+Para preparar las pruebas de navegador, instala Firefox una vez con `pnpm exec playwright install firefox`. Después ejecuta `pnpm test:e2e`. Si instalaste el navegador localmente con `PLAYWRIGHT_BROWSERS_PATH=0 pnpm exec playwright install firefox`, usa también `PLAYWRIGHT_BROWSERS_PATH=0 pnpm test:e2e`. Las pruebas sirven la compilación local y no necesitan visitar las fuentes externas.
 
 Para publicar la web, configura `pnpm build` como comando de compilación y `dist/` como directorio de salida. No hace falta un servidor Node.js en producción. Si cambia el dominio público, actualiza `site` en [`astro.config.mjs`](astro.config.mjs) para que la URL canónica y la vista previa social apunten al sitio correcto.
 

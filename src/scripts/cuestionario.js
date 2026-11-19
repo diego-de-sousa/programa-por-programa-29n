@@ -34,6 +34,17 @@ const responsesLabel = { yes: "A favor", no: "En contra", skip: "Omitida" };
 let activeQuestions = [];
 let responses = new Map();
 let step = 0;
+let catalogueQuery = "";
+
+const nationalAliases = new Map();
+for (const item of districts.flatMap(district => district.congress)) {
+  if (!nationalAliases.has(item.id)) nationalAliases.set(item.id, []);
+  nationalAliases.get(item.id).push(item.name, item.sigla);
+}
+
+function normalizeSearch(value) {
+  return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es");
+}
 
 function escapeHtml(value) {
   const entities = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
@@ -83,24 +94,57 @@ function programLinks(metadata) {
 
 function renderCatalogue() {
   const candidates = getCandidates();
-  const scope = selectedDistrict()?.name ?? "Toda España";
+  const district = selectedDistrict();
+  const scope = district?.name ?? "Toda España";
   const documents = candidates.filter(item => parties[item.id]?.url).length;
   const availableQuestions = currentQuestions(candidates).length;
-  territorialOption.hidden = Boolean(selectedDistrict());
+  const wasOpen = catalogue.querySelector("details")?.open;
+  territorialOption.hidden = Boolean(district);
   heroNote.textContent = `${availableQuestions} preguntas · ${candidates.length} candidaturas · respuestas en tu navegador`;
   catalogue.innerHTML = `
-    <details class="catalogue-box"${selectedDistrict() ? " open" : ""}>
+    <details class="catalogue-box"${district || wasOpen ? " open" : ""}>
       <summary>${escapeHtml(scope)} · ${documents} de ${candidates.length} candidaturas con documento programático</summary>
-      <ul class="catalogue-list">${candidates.map(item => {
-        const metadata = parties[item.id];
-        const hasPositions = questions.some(question => question.positions[item.id]);
-        const detail = metadata?.url
-          ? `${programLinks(metadata)}${hasPositions ? "" : " · Sin medidas puntuadas"}`
-          : "Programa 29N no localizado en su web";
-        return `<li><div class="catalogue-name">${escapeHtml(labelFor(item))}</div><div class="catalogue-status">${detail}</div></li>`;
-      }).join("")}</ul>
+      <div class="catalogue-search">
+        <label for="catalogue-query">Buscar candidaturas</label>
+        <div><input id="catalogue-query" type="search" value="${escapeHtml(catalogueQuery)}" autocomplete="off">
+          <button class="button secondary" type="button">Limpiar búsqueda</button></div>
+      </div>
+      <p class="catalogue-status" role="status" aria-live="polite"></p>
+      <ul class="catalogue-list"></ul>
     </details>
     <p class="catalogue-status">Listas proclamadas según el ${sourceLink(roster.source, "BOE del 3 de noviembre")} y su ${sourceLink(roster.correction, "corrección oficial")}.</p>`;
+  const search = catalogue.querySelector("#catalogue-query");
+  const list = catalogue.querySelector(".catalogue-list");
+  const status = catalogue.querySelector('[role="status"]');
+  function updateList() {
+    const query = normalizeSearch(catalogueQuery.trim());
+    const filtered = candidates.filter(item => {
+      const aliases = district ? [item.name, item.sigla] : nationalAliases.get(item.id) ?? [];
+      return [labelFor(item), ...aliases].some(value => normalizeSearch(value).includes(query));
+    });
+    status.textContent = filtered.length
+      ? `${filtered.length} de ${candidates.length} candidaturas`
+      : `Sin resultados · 0 de ${candidates.length} candidaturas`;
+    list.innerHTML = filtered.map(item => {
+      const metadata = parties[item.id];
+      const hasPositions = questions.some(question => question.positions[item.id]);
+      const detail = metadata?.url
+        ? `${programLinks(metadata)}${hasPositions ? "" : " · Sin medidas puntuadas"}`
+        : "Programa 29N no localizado en su web";
+      return `<li><div class="catalogue-name">${escapeHtml(labelFor(item))}</div><div class="catalogue-status">${detail}</div></li>`;
+    }).join("");
+  }
+  search.addEventListener("input", () => {
+    catalogueQuery = search.value;
+    updateList();
+  });
+  catalogue.querySelector(".catalogue-search button").addEventListener("click", () => {
+    catalogueQuery = "";
+    search.value = "";
+    updateList();
+    search.focus();
+  });
+  updateList();
 }
 
 function showStage(stage) {
@@ -227,7 +271,7 @@ function renderResultCard({ item, comparable, matching, disagreements, omitted, 
   return `<article class="result-card" style="--party:${escapeHtml(color)}">
     <div class="result-top"><div><h3>${escapeHtml(labelFor(item))}</h3>
       ${label ? `<p class="projection-label">${label}</p>` : ""}</div>
-      <span class="score${ratio === null ? " small" : ""}">${ratio === null ? "Sin puntuación" : formatter.format(ratio)}</span></div>
+      <span class="score${ratio === null ? " small" : ""}">${ratio === null ? "Sin puntuación" : `${formatter.format(ratio)} <span class="score-fraction">· ${matching.length} de ${comparable.length}</span>`}</span></div>
     ${ratio === null ? "" : `<div class="bar" aria-hidden="true"><span style="width:${ratio * 100}%"></span></div>
       <p class="match-count">${matching.length} ${matching.length === 1 ? "coincidencia" : "coincidencias"} · ${disagreements.length} ${disagreements.length === 1 ? "discrepancia" : "discrepancias"}</p>`}
     <p>${coverage}</p>
