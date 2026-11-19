@@ -1,6 +1,6 @@
 import roster from "../data/candidaturas.js";
 import programas from "../data/programas.js";
-import { getComparison } from "./comparacion.js";
+import { getComparison, questionsForScope } from "./comparacion.js";
 
 const hero = document.querySelector(".hero");
 const form = document.querySelector("#start-form");
@@ -69,10 +69,7 @@ function getCandidates() {
 }
 
 function currentQuestions(candidates) {
-  const ids = new Set(candidates.map(item => item.id));
-  const includeTerritorial = Boolean(selectedDistrict()) || territorial.checked;
-  return questions.filter(question =>
-    (includeTerritorial || !question.local) && Object.keys(question.positions).some(id => ids.has(id)));
+  return questionsForScope(questions, candidates, selectedDistrict()?.id, territorial.checked);
 }
 
 function answeredCount() {

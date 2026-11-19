@@ -1,3 +1,10 @@
+export function questionsForScope(questions, candidates, district, includeLocal) {
+  const ids = new Set(candidates.map(item => item.id));
+  return questions.filter(question =>
+    (!question.local || (district ? question.districts.includes(district) : includeLocal)) &&
+    Object.keys(question.positions).some(id => ids.has(id)));
+}
+
 export function getComparison(item, activeQuestions, responses) {
   const applicable = activeQuestions.flatMap(question => {
     const position = question.positions[item.id];

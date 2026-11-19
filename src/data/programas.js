@@ -2952,7 +2952,13 @@ export default {
           "page": 12
         }
       },
-      "local": true
+      "local": true,
+      "districts": [
+        "navarra",
+        "araba-alava",
+        "bizkaia",
+        "gipuzkoa"
+      ]
     },
     {
       "id": "navarraConvenio",
@@ -2977,7 +2983,10 @@ export default {
           "evidence": "Se compromete a mantener el Convenio Económico y el régimen foral de Navarra."
         }
       },
-      "local": true
+      "local": true,
+      "districts": [
+        "navarra"
+      ]
     },
     {
       "id": "bardenasRange",
@@ -2991,7 +3000,10 @@ export default {
           "evidence": "Propone cerrar y desmantelar el campo de tiro y financiar planes de reconversión para los municipios afectados."
         }
       },
-      "local": true
+      "local": true,
+      "districts": [
+        "navarra"
+      ]
     },
     {
       "id": "canaryResidentDiscount",
@@ -3004,7 +3016,11 @@ export default {
           "evidence": "Propone consolidar el descuento del 75 % en transporte aéreo y marítimo para residentes y supervisar las tarifas."
         }
       },
-      "local": true
+      "local": true,
+      "districts": [
+        "las-palmas",
+        "santa-cruz-de-tenerife"
+      ]
     },
     {
       "id": "canaryBusGratuity",
@@ -3017,7 +3033,11 @@ export default {
           "evidence": "Reclama financiación estatal estable que cubra el coste de la bonificación y mantenga la gratuidad de guaguas y tranvías para sus beneficiarios."
         }
       },
-      "local": true
+      "local": true,
+      "districts": [
+        "las-palmas",
+        "santa-cruz-de-tenerife"
+      ]
     },
     {
       "id": "catalanFiscalAgreement",
@@ -3031,7 +3051,13 @@ export default {
           "page": 5,
           "evidence": "Propone un concierto económico como el vasco, mediante una ley orgánica y una reforma del Estatuto."
         }
-      }
+      },
+      "districts": [
+        "barcelona",
+        "girona",
+        "lleida",
+        "tarragona"
+      ]
     },
     {
       "id": "leonAutonomy",
@@ -3044,7 +3070,12 @@ export default {
           "locator": "Compromiso 1, Autonomía leonesa",
           "evidence": "Presenta la autonomía leonesa como su primera reivindicación ante el Congreso."
         }
-      }
+      },
+      "districts": [
+        "leon",
+        "salamanca",
+        "zamora"
+      ]
     },
     {
       "id": "huernaToll",
@@ -3057,7 +3088,11 @@ export default {
           "locator": "Compromiso 7, Plan Estratégico de Movilidad y Transporte",
           "evidence": "Propone suprimir los peajes del Huerna y de la autopista Astorga-León."
         }
-      }
+      },
+      "districts": [
+        "asturias",
+        "leon"
+      ]
     },
     {
       "id": "valencianCivilLaw",
@@ -3070,7 +3105,12 @@ export default {
           "locator": "Bloque 4, Autogobierno, Derecho Civil e Identidad",
           "evidence": "Propone recuperar las competencias y un marco autonómico de derecho civil valenciano."
         }
-      }
+      },
+      "districts": [
+        "alicante",
+        "castellon",
+        "valencia"
+      ]
     },
     {
       "id": "valencianDebt",
@@ -3083,7 +3123,12 @@ export default {
           "locator": "Bloque 1, Financiación Autonómica y Deuda Histórica",
           "evidence": "Reclama que el Estado asuma y compense la deuda valenciana que atribuye a la falta de reforma del modelo autonómico."
         }
-      }
+      },
+      "districts": [
+        "alicante",
+        "castellon",
+        "valencia"
+      ]
     },
     {
       "id": "teruelFund",
@@ -3097,7 +3142,10 @@ export default {
           "evidence": "Fija en 100 millones el importe del fondo, que destinaría a proyectos estratégicos de empleo."
         }
       },
-      "local": true
+      "local": true,
+      "districts": [
+        "teruel"
+      ]
     },
     {
       "id": "soriaRuralFund",
@@ -3110,7 +3158,10 @@ export default {
           "evidence": "Propone un Fondo de Inversiones para Soria que dé financiación estable a un plan provincial de diez años."
         }
       },
-      "local": true
+      "local": true,
+      "districts": [
+        "soria"
+      ]
     }
   ]
 };
