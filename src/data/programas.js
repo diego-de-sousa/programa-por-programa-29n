@@ -1,4 +1,4 @@
-window.PROGRAMAS = {
+export default {
   "parties": {
     "pp": {
       "name": "Partido Popular",

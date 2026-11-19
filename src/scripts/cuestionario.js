@@ -1,4 +1,5 @@
-"use strict";
+import roster from "../data/candidaturas.js";
+import programas from "../data/programas.js";
 
 const hero = document.querySelector(".hero");
 const form = document.querySelector("#start-form");
@@ -9,8 +10,7 @@ const quiz = document.querySelector("#cuestionario");
 const results = document.querySelector("#resultados");
 const catalogue = document.querySelector("#catalogue");
 const heroNote = document.querySelector("#hero-note");
-const roster = window.CANDIDATURAS;
-const { parties, questions } = window.PROGRAMAS;
+const { parties, questions } = programas;
 const districts = roster.districts;
 const alphabet = new Intl.Collator("es", { sensitivity: "base" });
 const formatter = new Intl.NumberFormat("es-ES", { style: "percent", maximumFractionDigits: 1 });

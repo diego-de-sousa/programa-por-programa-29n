@@ -1,33 +1,7 @@
-<!doctype html>
-<html lang="es" prefix="og: https://ogp.me/ns#">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#faf8f3">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
-  <meta name="description" content="Compara tus respuestas con medidas concretas de los programas de las elecciones generales del 29 de noviembre de 2026.">
-  <link rel="canonical" href="https://programa-por-programa-29n.cozarkd.chatgpt.site/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="Programa por programa">
-  <meta property="og:title" content="Programa por programa · Elecciones generales 29N">
-  <meta property="og:description" content="Compara tus respuestas con medidas concretas de los programas electorales del 29N y consulta las fuentes de cada coincidencia.">
-  <meta property="og:url" content="https://programa-por-programa-29n.cozarkd.chatgpt.site/">
-  <meta property="og:image" content="https://programa-por-programa-29n.cozarkd.chatgpt.site/og-programa-29n.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Programa por programa. Elecciones generales del 29 de noviembre de 2026. Dos papeletas con casillas.">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Programa por programa · Generales 29N</title>
-  <link rel="stylesheet" href="estilos.css">
-  <script src="candidaturas.js" defer></script>
-  <script src="programas.js" defer></script>
-  <script src="cuestionario.js" defer></script>
-</head>
-<body>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout>
   <a class="skip" href="#contenido">Saltar al contenido</a>
   <main id="contenido" tabindex="-1">
     <section class="wrap hero" id="inicio" aria-labelledby="titulo">
@@ -76,5 +50,7 @@
   </main>
   <footer class="foot"><div class="wrap footer-inner"><span>Programa por programa · Corte documental del 19 de noviembre de 2026</span><a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23103">Candidaturas en el BOE</a></div></footer>
   <noscript><p class="wrap">Activa JavaScript en tu navegador para usar el cuestionario interactivo.</p></noscript>
-</body>
-</html>
+  <script>
+    import '../scripts/cuestionario.js';
+  </script>
+</BaseLayout>

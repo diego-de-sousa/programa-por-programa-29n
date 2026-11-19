@@ -1,0 +1,39 @@
+---
+import '../styles/estilos.css';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL('og-programa-29n.png', canonicalURL);
+
+// Vite's development server needs a same-origin connection for hot updates.
+const connectSrc = import.meta.env.DEV ? "'self'" : "'none'";
+const contentSecurityPolicy = `default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src ${connectSrc}; form-action 'none'; base-uri 'none'`;
+---
+<!doctype html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#faf8f3">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content={contentSecurityPolicy}>
+  <meta name="description" content="Compara tus respuestas con medidas concretas de los programas de las elecciones generales del 29 de noviembre de 2026.">
+  <link rel="canonical" href={canonicalURL}>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Programa por programa">
+  <meta property="og:title" content="Programa por programa · Elecciones generales 29N">
+  <meta property="og:description" content="Compara tus respuestas con medidas concretas de los programas electorales del 29N y consulta las fuentes de cada coincidencia.">
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:image" content={socialImageURL}>
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Programa por programa. Elecciones generales del 29 de noviembre de 2026. Dos papeletas con casillas.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Programa por programa · Generales 29N</title>
+</head>
+<body>
+  <slot />
+</body>
+</html>
