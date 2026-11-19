@@ -3,7 +3,7 @@
   <p><strong>Compara propuestas. Consulta las fuentes. Saca tus propias conclusiones.</strong></p>
   <p><img src="public/og-programa-29n.png" width="720" alt="Programa por programa · Elecciones generales del 29 de noviembre de 2026. Dos papeletas con casillas."></p>
   <p>
-    <a href="https://programa-por-programa-29n.cozarkd.chatgpt.site/">Abrir el cuestionario</a> ·
+    <a href="https://programa-por-programa-29n.vercel.app/">Abrir el cuestionario</a> ·
     <a href="#arranque-local">Arranque local</a> ·
     <a href="#fuentes-y-método">Fuentes y método</a>
   </p>
