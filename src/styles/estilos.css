@@ -99,11 +99,10 @@ details > summary { cursor: pointer; font-weight: 700; padding: .85rem 0; }
 .catalogue-status { color: var(--muted); font-size: .9rem; }
 .result-actions { margin: 1.3rem 0 1.7rem; justify-content: flex-start; }
 .text-button { border: 0; padding: .45rem 0; margin-top: .8rem; background: transparent; color: var(--accent); text-decoration: underline; text-underline-offset: .2em; }
-.result-controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .55rem 1rem; border-block: 1px solid var(--line); padding-block: .65rem; margin-bottom: 1.4rem; }
-.sort-control { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; }
-.sort-control label { font-size: .9rem; font-weight: 650; }
-.sort-control .select-wrap { flex-basis: auto; }
-.sort-control select { padding-block: .45rem; min-height: 2.6rem; }
+.result-controls { border-block: 1px solid var(--line); padding-block: .65rem; margin-bottom: 1.4rem; }
+.result-controls label { display: block; font-weight: 650; margin-top: .6rem; }
+.result-controls select { max-width: 24rem; }
+.result-controls [role="status"] { margin-top: .75rem; }
 .result-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .85rem; align-items: start; }
 .result-group-title { font-size: 1.1rem; margin-block: 0 .75rem; }
 .result-group { background: var(--white); border: 1px solid var(--line); border-radius: .5rem; margin-top: .75rem; }
@@ -120,8 +119,7 @@ details > summary { cursor: pointer; font-weight: 700; padding: .85rem 0; }
 .bar { height: .55rem; border-radius: .3rem; background: repeating-linear-gradient(135deg, #f3d8d8 0 4px, #e7bdc0 4px 6px); margin-block: .75rem .55rem; overflow: hidden; }
 .bar span { display: block; height: 100%; background: var(--party, #8b8173); }
 .result-card p, .result-card summary { font-size: .9rem; }
-.result-card p, .projection-label { color: var(--muted); }
-.projection-label { font-size: .875rem; }
+.result-card p { color: var(--muted); }
 .result-card .match-count { font-weight: 700; color: var(--ink); }
 .evidence-group { margin-top: .45rem; border-top: 1px solid var(--line); }
 .evidence-group > summary { padding-block: .45rem .12rem; }

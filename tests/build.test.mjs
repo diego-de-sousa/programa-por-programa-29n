@@ -24,6 +24,14 @@ test('the static home page ships the questionnaire, privacy policy and social pr
   );
 });
 
+test('the published methodology contains no poll ordering and explains common comparisons', async () => {
+  const html = await readFile(new URL('index.html', dist), 'utf8');
+  assert.doesNotMatch(html, /DatosRTVE|sondeo|proyección nacional/i);
+  assert.match(html, /8 preguntas comunes y 4 temas/);
+  assert.match(html, /umbral editorial, no estadístico/);
+  assert.match(html, /no demuestra silencio del programa/);
+});
+
 test('the built page declares a valid local favicon', async () => {
   const html = await readFile(new URL('index.html', dist), 'utf8');
   assert.match(html, /<link rel="icon" href="\/favicon\.ico"(?: type="image\/x-icon")?>/);

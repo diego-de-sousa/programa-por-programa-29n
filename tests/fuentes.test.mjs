@@ -44,6 +44,14 @@ test('solo se publican posturas con respaldo documental electoral directo', () =
   assert.deepEqual(validarFuentesElectorales(f.programs), ['Posición q/a: fuente electoral no admitida']);
 });
 
+test('la postura ambigua documentada es válida sin admitir valores arbitrarios', () => {
+  const f = fixture();
+  f.programs.questions[0].positions.a.stance = 'ambiguous';
+  assert.deepEqual(validarDatos(f.roster, f.programs), []);
+  f.programs.questions[0].positions.a.stance = 'partial';
+  assert.deepEqual(validarDatos(f.roster, f.programs), ['Posición q/a: postura inválida']);
+});
+
 test('identificadores duplicados, posiciones desconocidas y postura inválida se detectan', () => {
   const f = fixture();
   f.roster.districts.push({ id: 'uno', congress: [{ id: 'x' }, { id: 'x' }] });

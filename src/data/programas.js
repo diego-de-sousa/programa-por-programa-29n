@@ -14,7 +14,10 @@ export default {
       "url": "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26-1.pdf",
       "label": "Programa electoral del 29N",
       "landing": "https://lafuerzadelagente.es/programa",
-      "sourceStatus": "electoral"
+      "sourceStatus": "electoral",
+      "extracts": [
+        "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26.pdf"
+      ]
     },
     "vox": {
       "name": "Vox",
@@ -2766,9 +2769,11 @@ export default {
           "evidence": "Fija el mínimo en 14 años y permite tener cuenta entre los 14 y los 15 con autorización familiar."
         },
         "psoe": {
-          "stance": "yes",
-          "locator": "Medida 399 · Edad mínima en redes sociales",
-          "evidence": "Fija un mínimo general de 16 años y contempla una excepción cuando la plataforma demuestre que es segura por defecto."
+          "stance": "ambiguous",
+          "locator": "Medida 399, p. 96 impresa (p. 95 del PDF)",
+          "url": "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26.pdf",
+          "page": 95,
+          "evidence": "Fija la edad mínima en 16 años, pero permite rebajarla si la plataforma demuestra que es segura por defecto. La medida no aclara el papel de la autorización familiar."
         }
       }
     },

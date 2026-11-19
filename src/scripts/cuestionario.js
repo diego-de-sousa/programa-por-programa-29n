@@ -1,6 +1,6 @@
 import roster from "../data/candidaturas.js";
 import programas from "../data/programas.js";
-import { getComparison, questionsForScope } from "./comparacion.js";
+import { comparePair, getComparison, questionsForScope } from "./comparacion.js";
 
 const hero = document.querySelector(".hero");
 const form = document.querySelector("#start-form");
@@ -16,20 +16,12 @@ const districts = roster.districts;
 const alphabet = new Intl.Collator("es", { sensitivity: "base" });
 const formatter = new Intl.NumberFormat("es-ES", { style: "percent", maximumFractionDigits: 1 });
 const points = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 1 });
-const seats = {
-  pp: 129, psoe: 112, vox: 64, erc: 11, "eh-bildu": 8, fa: 8, junts: 4,
-  "adelante-andalucia": 3, bng: 3, compromis: 3, "eaj-pnv": 3, cc: 1, podemos: 1
-};
-const projectionGroups = {
-  "upn-pp": "pp", "fa-andaluz": "fa", "fa-asturias": "fa", "cha-fa": "fa",
-  "comuns-front-ampli": "fa", "frente-amplio-fronte-ampla": "fa", "frente-amplio-fronte-zabala": "fa"
-};
 const answers = [
   { id: "yes", label: "A favor" },
   { id: "no", label: "En contra" },
   { id: "skip", label: "Sin opinión / prefiero pasar" }
 ];
-const responsesLabel = { yes: "A favor", no: "En contra", skip: "Omitida" };
+const responsesLabel = { yes: "A favor", no: "En contra", skip: "Omitida", ambiguous: "Ambigua o parcial" };
 
 let activeQuestions = [];
 let responses = new Map();
@@ -242,33 +234,19 @@ function renderEvidence(rows, metadata, type, name, loss = 0) {
     }).join("")}</ul></details>`;
 }
 
-function projectionLabel(item) {
-  const key = projectionGroups[item.id] ?? item.id;
-  if (!seats[key]) return "";
-  if (key === "pp") return item.id === "pp"
-    ? "129 escaños estimados con UPN–PP" : "Incluida en la estimación de PP y UPN–PP";
-  if (item.id === "fa") return "8 escaños estimados para el conjunto de Frente Amplio";
-  if (key !== item.id) return "Incluida en la estimación de Frente Amplio";
-  return `${seats[key]} ${seats[key] === 1 ? "escaño estimado" : "escaños estimados"}`;
-}
-
-function renderResultCard({ item, comparable, matching, disagreements, omitted, ratio }) {
+function renderResultCard({ item, comparable, matching, disagreements, omitted, ambiguous, unpositioned, ratio }) {
   const metadata = parties[item.id];
-  const label = projectionLabel(item);
-  const coverage = ratio !== null
-    ? `${comparable.length} ${comparable.length === 1 ? "respuesta comparable" : "respuestas comparables"}${comparable.length < 3 ? " · Muestra reducida" : ""}`
-    : omitted.length
-      ? "Sin respuestas comparables."
-      : metadata?.url ? "Sin medidas verificadas para estas preguntas." : programStatus(metadata);
+  const coverage = `${comparable.length} de ${answeredCount()} respuestas respondidas comparables${comparable.length && comparable.length < 3 ? " · Muestra reducida" : ""}`;
   const color = metadata?.color ?? "#8b8173";
   const loss = comparable.length ? 100 / comparable.length : 0;
   return `<article class="result-card" style="--party:${escapeHtml(color)}">
-    <div class="result-top"><div><h3>${escapeHtml(labelFor(item))}</h3>
-      ${label ? `<p class="projection-label">${label}</p>` : ""}</div>
+    <div class="result-top"><div><h3>${escapeHtml(labelFor(item))}</h3></div>
       <span class="score${ratio === null ? " small" : ""}">${ratio === null ? "Sin puntuación" : `${formatter.format(ratio)} <span class="score-fraction">· ${matching.length} de ${comparable.length}</span>`}</span></div>
     ${ratio === null ? "" : `<div class="bar" aria-hidden="true"><span style="width:${ratio * 100}%"></span></div>
       <p class="match-count">${matching.length} ${matching.length === 1 ? "coincidencia" : "coincidencias"} · ${disagreements.length} ${disagreements.length === 1 ? "discrepancia" : "discrepancias"}</p>`}
     <p>${coverage}</p>
+    ${!metadata?.url ? `<p>${programStatus(metadata)}</p>` : `<p>${unpositioned.length} respuestas sin postura codificada; esto no demuestra silencio del programa.</p>`}
+    ${renderEvidence(ambiguous, metadata, "is-ambiguous", "Postura ambigua o parcial · excluida del cálculo")}
     ${renderEvidence(disagreements, metadata, "is-disagreement", disagreements.length === 1 ? "discrepancia" : "discrepancias", loss)}
     ${renderEvidence(matching, metadata, "is-match", matching.length === 1 ? "coincidencia" : "coincidencias")}
     ${renderEvidence(omitted, metadata, "is-omitted", omitted.length === 1 ? "medida sin comparar" : "medidas sin comparar")}
@@ -280,29 +258,13 @@ function resultGrid(rows) {
   return `<div class="result-grid">${rows.map(renderResultCard).join("")}</div>`;
 }
 
-function resultGroup(rows, title) {
-  return rows.length
-    ? `<details class="result-group"><summary>${title} <span>${rows.length}</span></summary>${resultGrid(rows)}</details>`
-    : "";
-}
-
-function renderOrderedResults(candidates, order) {
-  const rows = candidates.map(item => getComparison(item, activeQuestions, responses));
-  if (order === "alphabet") return resultGrid(rows);
-  if (order === "ratio") {
-    const scored = rows.filter(row => row.ratio !== null).sort((a, b) =>
-      b.ratio - a.ratio || b.comparable.length - a.comparable.length);
-    return resultGrid(scored.slice(0, 6)) + resultGroup(scored.slice(6), "Más coincidencias")
-      + resultGroup(rows.filter(row => row.ratio === null), "Candidaturas sin puntuación");
-  }
-  const hasProjection = ({ item }) =>
-    Boolean(seats[item.id] || (selectedDistrict() && seats[projectionGroups[item.id]]));
-  const nationalSeats = ({ item }) => seats[projectionGroups[item.id] ?? item.id] ?? 0;
-  const projected = rows.filter(hasProjection).sort((a, b) => nationalSeats(b) - nationalSeats(a));
-  const others = rows.filter(row => !hasProjection(row));
-  return `<h3 class="result-group-title">Mayor proyección de escaños</h3>${resultGrid(projected.slice(0, 6))}
-    ${resultGroup(projected.slice(6), "Otras candidaturas en la proyección")}
-    ${resultGroup(others, "Resto de candidaturas")}`;
+function renderPair(first, second) {
+  if (!first || !second) return "Elige dos candidaturas para comparar.";
+  if (first.id === second.id) return "Elige dos candidaturas distintas.";
+  const pair = comparePair(first, second, activeQuestions, responses);
+  const coverage = `${pair.shared.length} preguntas comunes de ${answeredCount()} respondidas · ${pair.topics.length} temas`;
+  if (!pair.eligible) return `Insuficiente: ${coverage}. Se requieren al menos 8 preguntas comunes y 4 temas.`;
+  return `${coverage}. ${escapeHtml(labelFor(first))}: ${formatter.format(pair.scores[0])} (${pair.shared.length} de ${answeredCount()} respondidas comparables); ${escapeHtml(labelFor(second))}: ${formatter.format(pair.scores[1])} (${pair.shared.length} de ${answeredCount()} respondidas comparables). Sensibilidad al retirar un tema: ${pair.sensitive ? "el empate o la dirección cambia" : "el empate o la dirección se mantiene"}.`;
 }
 
 function renderResults() {
@@ -323,17 +285,16 @@ function renderResults() {
       <button class="button secondary" type="button" data-restart>Nuevo cuestionario</button>
       <a href="#programas">Ver todos los programas disponibles</a>
     </div>
-    <div class="result-controls">
-      <div class="sort-control"><label for="result-sort">Orden</label><div class="select-wrap"><select id="result-sort">
-        <option value="projection">Proyección de escaños</option>
-        <option value="ratio"${answered ? "" : " disabled"}>Mayor coincidencia</option>
-        <option value="alphabet">Alfabético</option>
-      </select></div></div>
-      <p class="projection-label">Proyección nacional · ${sourceLink(document.querySelector("#projection-source").href, "DatosRTVE, 18 nov")}</p>
-    </div>
-    <div id="ordered-results">${renderOrderedResults(candidates, "projection")}</div>`;
-  results.querySelector("#result-sort").addEventListener("change", event => {
-    results.querySelector("#ordered-results").innerHTML = renderOrderedResults(candidates, event.target.value);
+    <details class="result-controls"><summary>Comparar dos candidaturas (opcional)</summary>
+      <p>Solo se comparan las mismas respuestas binarias. Mínimo editorial, no estadístico: 8 preguntas comunes y 4 temas. No es una recomendación.</p>
+      ${["Primera", "Segunda"].map((label, i) => `<label for="pair-${i}">${label} candidatura</label><select id="pair-${i}"><option value="">Elige una candidatura</option>${candidates.map(item => `<option value="${escapeHtml(item.id)}">${escapeHtml(labelFor(item))}</option>`).join("")}</select>`).join("")}
+      <p role="status" aria-label="Comparación directa">Elige dos candidaturas para comparar.</p>
+    </details>
+    ${resultGrid(candidates.map(item => getComparison(item, activeQuestions, responses)))}`;
+  const selectors = [...results.querySelectorAll("[id^=pair-]")];
+  for (const selector of selectors) selector.addEventListener("change", () => {
+    const [first, second] = selectors.map(select => candidates.find(item => item.id === select.value));
+    results.querySelector('[aria-label="Comparación directa"]').innerHTML = renderPair(first, second);
   });
   results.querySelector("[data-review]").addEventListener("click", () => {
     step = 0;

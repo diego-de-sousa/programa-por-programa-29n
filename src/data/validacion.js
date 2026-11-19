@@ -40,7 +40,7 @@ export function validarDatos(roster, programs) {
     for (const [id, position] of Object.entries(question.positions)) {
       const label = `Posición ${question.id}/${id}`;
       if (!candidates.has(id) || !Object.hasOwn(programs.parties, id)) errors.push(`${label}: candidatura desconocida`);
-      if (!['yes', 'no'].includes(position.stance)) errors.push(`${label}: postura inválida`);
+      if (!['yes', 'no', 'ambiguous'].includes(position.stance)) errors.push(`${label}: postura inválida`);
       if (typeof position.locator !== 'string' || !position.locator.trim()) errors.push(`${label}: localizador ausente`);
       if (Object.hasOwn(position, 'url')) checkUrl(position.url, `${label} url`);
       else if (!urlPublica(programs.parties[id]?.url)) errors.push(`${label}: fuente ausente o inválida`);

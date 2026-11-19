@@ -45,7 +45,9 @@ Para publicar la web, configura `pnpm build` como comando de compilación y `dis
 ## Fuentes y método
 
 - **Qué cuenta:** se comparan solo las respuestas «A favor» o «En contra» para las que el programa recoge una posición clara. Las omitidas no cuentan.
-- **Cómo se lee el resultado:** 3 coincidencias de 4 respuestas comparables dan un 75 %. Sin respuestas comparables se muestra «Sin puntuación». El sondeo citado en la web solo determina el orden inicial, no el porcentaje.
+- **Cómo se lee el resultado:** 3 coincidencias de 4 respuestas comparables dan un 75 %. Cada porcentaje muestra también cuántas respuestas son comparables del total respondido. Sin respuestas comparables se muestra «Sin puntuación». Las candidaturas se muestran alfabéticamente.
+- **Comparación opcional:** dos candidaturas elegidas se calculan sobre las mismas preguntas respondidas con posturas binarias de ambas. Se requieren al menos 8 preguntas y 4 temas, umbral editorial y no estadístico. Se retira cada tema y se comprueba si cambia la dirección o el empate; no se recomienda ni destaca una candidatura.
+- **Ausencias e incertidumbre:** no tener fuente admitida es distinto de no tener una postura codificada, que no prueba que el programa guarde silencio. Una postura documentada ambigua o parcial queda fuera del denominador; su evidencia sigue disponible. Ninguna postura no binaria entra en la comparación común.
 - **Cómo revisar una comparación:** el detalle del resultado incluye la referencia al documento electoral. La web indica el corte documental utilizado: **19 de noviembre de 2026**.
 
 > **Privacidad:** las respuestas y los resultados se quedan en la pestaña. El cuestionario no usa analítica, cookies ni almacenamiento persistente.
