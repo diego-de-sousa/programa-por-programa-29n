@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#faf8f3">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <meta name="description" content="Compara tus respuestas con medidas concretas de los programas de las elecciones generales del 29 de noviembre de 2026.">
+  <link rel="canonical" href="https://programa-por-programa-29n.cozarkd.chatgpt.site/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Programa por programa">
+  <meta property="og:title" content="Programa por programa · Elecciones generales 29N">
+  <meta property="og:description" content="Compara tus respuestas con medidas concretas de los programas electorales del 29N y consulta las fuentes de cada coincidencia.">
+  <meta property="og:url" content="https://programa-por-programa-29n.cozarkd.chatgpt.site/">
+  <meta property="og:image" content="https://programa-por-programa-29n.cozarkd.chatgpt.site/og-programa-29n.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Programa por programa. Elecciones generales del 29 de noviembre de 2026. Dos papeletas con casillas.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Programa por programa · Generales 29N</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="candidaturas.js" defer></script>
+  <script src="programas.js" defer></script>
+  <script src="cuestionario.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="#inicio" aria-label="Programa por programa, inicio"><span class="brand-mark" aria-hidden="true"></span>Programa por programa</a>
+      <nav aria-label="Principal"><a href="#programas">Programas</a><a href="#metodo">Metodología</a><a href="#transparencia">Transparencia</a></nav>
+    </div>
+  </header>
+  <main id="contenido" tabindex="-1">
+    <section class="wrap hero" id="inicio" aria-labelledby="titulo">
+      <div class="hero-content">
+        <p class="overline">ELECCIONES GENERALES · 29 NOV 2026</p>
+        <h1 id="titulo">¿Qué programas<br class="desktop-br"> coinciden contigo?</h1>
+        <p class="lede">Responde a medidas concretas y compara tus respuestas con lo que propone cada candidatura al Congreso.</p>
+        <form id="start-form" class="start-form">
+          <label for="province">Circunscripción</label>
+          <div class="start-controls">
+            <div class="select-wrap"><select id="province" name="province"><option value="">Toda España</option></select></div>
+            <button class="button primary" type="submit">Empezar cuestionario</button>
+          </div>
+          <label class="territorial-option" id="territorial-option"><input type="checkbox" id="territorial"> Incluir medidas específicas de cada territorio</label>
+        </form>
+        <p id="hero-note" class="hero-note"></p>
+      </div>
+      <div class="paper-art" aria-hidden="true">
+        <div class="paper-glow"></div>
+        <div class="paper back"><i></i><i></i><i></i></div>
+        <div class="paper front"><div class="paper-heading"><span>29</span><span>N</span></div><div class="paper-rule"></div><div class="paper-items"><div><i class="checked"></i><b></b></div><div><i></i><b></b></div><div><i></i><b></b></div></div></div>
+      </div>
+    </section>
+    <section class="wrap stage" id="cuestionario" aria-labelledby="quiz-title" hidden></section>
+    <section class="wrap stage" id="resultados" aria-labelledby="result-title" hidden></section>
+    <section class="wrap info-section" id="programas" aria-labelledby="docs-title">
+      <div class="section-heading"><p class="overline">ARCHIVO ELECTORAL</p><h2 id="docs-title">Programas y candidaturas</h2><p id="docs-description">Consulta los documentos originales y el estado de las candidaturas en la circunscripción elegida.</p></div>
+      <div id="catalogue"></div>
+    </section>
+    <section class="wrap info-section method" id="metodo" aria-labelledby="method-title">
+      <div class="section-heading"><p class="overline">CÓMO SE CALCULA</p><h2 id="method-title">De la propuesta al porcentaje</h2></div>
+      <div class="method-grid">
+        <article><h3>Qué se compara</h3><p>Una pregunta entra en el cálculo si respondes a favor o en contra y el programa recoge una posición clara. Todas las preguntas comparables pesan igual. Las omisiones quedan fuera y con cero comparaciones verás «Sin puntuación».</p></article>
+        <article><h3>Cuánto resta discrepar</h3><p>El porcentaje es 100 × coincidencias ÷ respuestas comparables. Con 4 comparaciones, cada discrepancia reduce la coincidencia en 25 puntos porcentuales respecto a coincidir en esa medida. Así, 3 coincidencias y 1 discrepancia dan un 75 %.</p></article>
+        <article><h3>Cómo se ordenan los resultados</h3><p>El orden inicial usa la <a id="projection-source" href="https://www.rtve.es/noticias/20261005/encuestas-elecciones-generales-29n-pp-vox-diputados/17253873.shtml" target="_blank" rel="noopener noreferrer">proyección nacional de DatosRTVE del 18 de noviembre</a>. La encuesta solo determina el orden de presentación. El porcentaje se calcula íntegramente con los documentos electorales.</p></article>
+      </div>
+    </section>
+    <section class="wrap info-section" id="transparencia" aria-labelledby="privacy-title">
+      <div class="section-heading"><h2 id="privacy-title">Transparencia</h2><p>Tus respuestas, tu circunscripción y tus resultados se quedan en la pestaña. Puedes consultar el <a href="https://github.com/diego-de-sousa/programa-por-programa-29n">Código fuente</a> en GitHub.</p></div>
+      <div class="method-grid">
+        <article><h3>Privacidad</h3><p>El cuestionario hace los cálculos en tu dispositivo. No envía las respuestas ni usa analítica, cookies o almacenamiento persistente. Al recargar o cerrar la página se borran. Si abres un programa o un sondeo, tu navegador visita la web externa correspondiente.</p></article>
+        <article><h3>Fuentes y alcance</h3><p>Las medidas vienen de programas y documentos electorales publicados por las candidaturas. Cada comparación incluye una referencia. Una pregunta solo recoge la medida que describe, y distintos programas pueden tener distinta cobertura.</p></article>
+        <article><h3>Criterio editorial</h3><p>La selección de temas y la redacción son decisiones editoriales. En «Toda España» puedes añadir medidas de territorios concretos. Los resultados describen las respuestas comparables de esta selección y puedes revisar cómo se ha contado cada una.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="foot"><div class="wrap footer-inner"><span>Programa por programa · Corte documental del 19 de noviembre de 2026</span><a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23103">Candidaturas en el BOE</a></div></footer>
+  <noscript><p class="wrap">Activa JavaScript en tu navegador para usar el cuestionario interactivo.</p></noscript>
+</body>
+</html>
