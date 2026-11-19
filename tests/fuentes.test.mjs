@@ -23,11 +23,19 @@ function fixture() {
 
 const citasCorregidas = [
   { id: '3.22', question: 'bullfightingFunding', parties: ['fa', 'fa-andaluz', 'fa-asturias', 'frente-amplio-fronte-ampla', 'frente-amplio-fronte-zabala'], locator: 'Apartado 5.7, Protección animal', page: 76, url: 'https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf' },
-  { id: '5.07', question: 'nuclear', parties: ['eh-bildu'], locator: '§1.9.1 · Transición energética', page: 15, url: 'https://ehbildu.eus/media/dokumentuak/posibleegin-programa-cas.pdf' },
-  { id: '14.03', question: 'defence', parties: ['adelante-andalucia'], locator: 'Propuesta 578, p. 109', page: 109, url: 'https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf#page=109' },
-  { id: '18.01', question: 'workWeek', parties: ['pfac'], locator: 'Medida 16, p. 4', page: 4, url: 'https://www.feministasalcongreso.es/wp-content/uploads/2026/11/PROGRAMA_ELECTORAL.pdf' },
-  { id: '18.07', question: 'holidayHomeLimits', parties: ['pfac'], locator: 'Medida 31, p. 6', page: 6, url: 'https://www.feministasalcongreso.es/wp-content/uploads/2026/11/PROGRAMA_ELECTORAL.pdf' },
-  { id: '25.01', question: 'dental', parties: ['pacma'], locator: 'Apartado 3.2.7, p. 59', page: 59, url: 'https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf' },
+  { id: '5.07', question: 'nuclear', parties: ['eh-bildu'], locator: '§1.9.1 · Energía y clima', page: 15, url: 'https://ehbildu.eus/media/dokumentuak/posibleegin-programa-cas.pdf' },
+  { id: '14.03', question: 'defence', parties: ['adelante-andalucia'], locator: 'Propuesta 578, p. 109 del PDF', page: 109, url: 'https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf#page=109' },
+  { id: '18.01', question: 'workWeek', parties: ['pfac'], locator: 'Medida 16, p. 4 del PDF', page: 4, url: 'https://www.feministasalcongreso.es/wp-content/uploads/2026/11/PROGRAMA_ELECTORAL.pdf' },
+  { id: '18.07', question: 'holidayHomeLimits', parties: ['pfac'], locator: 'Medida 31, p. 6 del PDF', page: 6, url: 'https://www.feministasalcongreso.es/wp-content/uploads/2026/11/PROGRAMA_ELECTORAL.pdf' },
+  { id: '25.01', question: 'dental', parties: ['pacma'], locator: 'Apartado 3.2.7, p. 59 del PDF', page: 59, url: 'https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf' },
+  ...[
+    ['31.01', 'holidayHomeLimits', 27, 11],
+    ['31.02', 'canaryResidentDiscount', 75, 18],
+    ['31.03', 'canaryBusGratuity', 78, 19],
+  ].map(([id, question, measure, page]) => ({
+    id, question, parties: ['cc'], locator: `Medida ${measure}`, page,
+    url: 'https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf',
+  })),
 ];
 
 for (const cita of citasCorregidas) {

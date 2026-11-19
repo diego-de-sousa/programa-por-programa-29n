@@ -755,7 +755,7 @@ export default {
         },
         "pfac": {
           "stance": "yes",
-          "locator": "Medida 16, p. 4",
+          "locator": "Medida 16, p. 4 del PDF",
           "page": 4,
           "evidence": "Propone avanzar hacia una jornada laboral de 30 horas sin reducción salarial."
         },
@@ -1122,7 +1122,7 @@ export default {
         },
         "eh-bildu": {
           "stance": "yes",
-          "locator": "§1.9.1 · Transición energética",
+          "locator": "§1.9.1 · Energía y clima",
           "page": 15,
           "evidence": "Propone mantener el calendario de cierre de las centrales nucleares definido en el Plan Nacional Integrado de Energía y Clima."
         },
@@ -1434,7 +1434,7 @@ export default {
         },
         "adelante-andalucia": {
           "stance": "no",
-          "locator": "Propuesta 578, p. 109",
+          "locator": "Propuesta 578, p. 109 del PDF",
           "page": 109,
           "evidence": "Rechaza el rearme europeo y propone reducir progresivamente el gasto militar.",
           "url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf#page=109"
@@ -1667,7 +1667,7 @@ export default {
         },
         "pacma": {
           "stance": "yes",
-          "locator": "Apartado 3.2.7, p. 59",
+          "locator": "Apartado 3.2.7, p. 59 del PDF",
           "page": 59,
           "evidence": "Propone atención dental básica gratuita para toda la población y más prestaciones para personas vulnerables."
         },
@@ -2441,11 +2441,12 @@ export default {
         "cc": {
           "stance": "yes",
           "locator": "Medida 27",
+          "page": 11,
           "evidence": "Propone dar cobertura jurídica a Canarias y a sus municipios para limitar los usos turísticos si existe presión acreditada sobre la vivienda residencial."
         },
         "pfac": {
           "stance": "yes",
-          "locator": "Medida 31, p. 6",
+          "locator": "Medida 31, p. 6 del PDF",
           "page": 6,
           "evidence": "Incluye limitar el alquiler turístico entre sus propuestas de vivienda."
         }
@@ -3018,6 +3019,7 @@ export default {
         "cc": {
           "stance": "yes",
           "locator": "Medida 75",
+          "page": 18,
           "evidence": "Propone consolidar el descuento del 75 % en transporte aéreo y marítimo para residentes y supervisar las tarifas."
         }
       },
@@ -3035,6 +3037,7 @@ export default {
         "cc": {
           "stance": "yes",
           "locator": "Medida 78",
+          "page": 19,
           "evidence": "Reclama financiación estatal estable que cubra el coste de la bonificación y mantenga la gratuidad de guaguas y tranvías para sus beneficiarios."
         }
       },
