@@ -402,10 +402,10 @@ export default {
           "evidence": "Propone financiación estatal específica para los ayuntamientos que declaren zonas tensionadas y apliquen planes de vivienda asociados a la regulación del alquiler."
         },
         "junts": {
-          "stance": "no",
+          "stance": "ambiguous",
           "locator": "Juventud · Objetivo 2, medida 2.2",
           "page": 60,
-          "evidence": "Propone derogar los artículos de la Ley 12/2023 sobre contención de precios y zonas tensionadas por razones de competencia y de oferta de alquiler."
+          "evidence": "Propone derogar los artículos estatales sobre contención de precios y zonas tensionadas por invadir competencias de Cataluña; no aclara si rechaza cualquier límite legal."
         },
         "comuns-front-ampli": {
           "stance": "yes",
@@ -599,7 +599,7 @@ export default {
     {
       "id": "classSizeLimits",
       "topic": "Educación",
-      "title": "¿Debe reducirse el número máximo de estudiantes por aula en la educación obligatoria?",
+      "title": "¿Debe reducirse el número de estudiantes por aula en la educación obligatoria?",
       "positions": {
         "psoe": {
           "stance": "yes",
@@ -653,7 +653,7 @@ export default {
     {
       "id": "aiPublicProcedures",
       "topic": "Inteligencia artificial",
-      "title": "¿Debe usarse inteligencia artificial para automatizar tareas repetitivas de la Administración pública?",
+      "title": "¿Debe usarse inteligencia artificial para reducir la burocracia en la Administración pública?",
       "positions": {
         "pp": {
           "stance": "yes",
@@ -1422,10 +1422,10 @@ export default {
           "evidence": "Rechaza el aumento del gasto militar y propone una reducción progresiva de la dotación."
         },
         "eh-bildu": {
-          "stance": "no",
+          "stance": "ambiguous",
           "locator": "§3.2.2 · Por la paz, contra las guerras",
           "page": 28,
-          "evidence": "Rechaza el aumento del gasto en defensa exigido por la OTAN."
+          "evidence": "Rechaza el aumento del gasto en defensa exigido por la OTAN, sin pronunciarse aquí sobre cualquier aumento."
         },
         "pfac": {
           "stance": "no",
@@ -1597,9 +1597,9 @@ export default {
           "evidence": "Plantea una educación pública gratuita entre los 0 y los 18 años y la universalización de la etapa de 0 a 3 años mediante más escuelas infantiles públicas."
         },
         "vox": {
-          "stance": "yes",
+          "stance": "ambiguous",
           "locator": "Medida 94, p. 51 impresa",
-          "evidence": "Incluye la gratuidad de la educación infantil de 0 a 3 años en su plan nacional de natalidad y apoyo a las familias."
+          "evidence": "Incluye la gratuidad real de la educación infantil de 0 a 3 años en un plan para familias españolas; no precisa una garantía para todas las familias solicitantes."
         },
         "fa": {
           "stance": "yes",
@@ -1714,9 +1714,9 @@ export default {
       "title": "¿Deben suspenderse los desahucios por impago de hogares vulnerables hasta que dispongan de una alternativa habitacional?",
       "positions": {
         "psoe": {
-          "stance": "yes",
+          "stance": "ambiguous",
           "locator": "Medidas 84 y 85",
-          "evidence": "Garantizaría un marco estable de protección frente a desahucios de personas vulnerables sin alternativa y trasladaría el coste de la suspensión a las administraciones."
+          "evidence": "Propone un marco estable de protección frente a desahucios de personas vulnerables sin alternativa y que las administraciones asuman el coste de la prohibición. No precisa que se suspendan todos hasta disponer de alternativa."
         },
         "fa": {
           "stance": "yes",
@@ -2225,15 +2225,15 @@ export default {
       "title": "¿Transferir a las comunidades autónomas las infraestructuras ferroviarias de cercanías que discurren por su territorio?",
       "positions": {
         "eaj-pnv": {
-          "stance": "yes",
+          "stance": "ambiguous",
           "locator": "Ferrocarril de viajeros · Compromiso 02",
           "page": 19,
-          "evidence": "Propone culminar la transferencia a Euskadi de su infraestructura ferroviaria de cercanías."
+          "evidence": "Propone culminar la transferencia a Euskadi de su infraestructura ferroviaria de cercanías, sin plantear una transferencia general a todas las comunidades."
         },
         "erc": {
-          "stance": "yes",
+          "stance": "ambiguous",
           "locator": "Medidas 222 y 224 · Rodalies",
-          "evidence": "Propone transferir a Cataluña las líneas acordadas, sus vías, estaciones e instalaciones y avanzar en el traspaso del mantenimiento de la red.",
+          "evidence": "Propone transferir a Cataluña las líneas acordadas, sus vías, estaciones e instalaciones y avanzar en el traspaso del mantenimiento de la red, sin plantear una transferencia general a todas las comunidades.",
           "url": "https://img.beteve.cat/wp-content/uploads/2026/11/ERC-programa-electoral-29-N-2026-2026-11-12.pdf"
         }
       }
@@ -2266,7 +2266,7 @@ export default {
     {
       "id": "minimumPensions",
       "topic": "Pensiones",
-      "title": "¿Vincular la cuantía de las pensiones mínimas al salario mínimo interprofesional?",
+      "title": "¿Deben elevarse las pensiones mínimas con el objetivo de equipararlas al salario mínimo interprofesional?",
       "positions": {
         "bng": {
           "stance": "yes",
@@ -2394,13 +2394,13 @@ export default {
     {
       "id": "judgesElectCouncil",
       "topic": "Justicia",
-      "title": "¿Deben elegir los jueces y magistrados a los doce vocales de procedencia judicial del Consejo General del Poder Judicial?",
+      "title": "¿Deben elegir los jueces y magistrados a los vocales de procedencia judicial del Consejo General del Poder Judicial?",
       "positions": {
         "ie": {
           "stance": "yes",
           "locator": "Reforma del Poder Judicial, p. 10",
           "page": 10,
-          "evidence": "Plantea que el Consejo sea elegido por los jueces."
+          "evidence": "Propone que los jueces y magistrados en activo elijan por sufragio directo y secreto a los diez miembros del Consejo, que podrían proceder de distintos perfiles jurídicos."
         },
         "fe-jons": {
           "stance": "yes",
@@ -2411,7 +2411,7 @@ export default {
           "stance": "no",
           "locator": "Democracia real, p. 15",
           "page": 15,
-          "evidence": "Propone abrir la elección de los vocales a la ciudadanía y a juristas de reconocido prestigio."
+          "evidence": "Propone elegir a los vocales mediante candidaturas independientes sometidas a sufragio de la ciudadanía y juristas de reconocido prestigio."
         },
         "vox": {
           "stance": "yes",
@@ -2528,9 +2528,9 @@ export default {
       "title": "¿Utilizar los años de cotización más favorables para calcular el importe de la pensión de jubilación?",
       "positions": {
         "partido-autonomos": {
-          "stance": "yes",
-          "locator": "Medida 04",
-          "evidence": "Propone utilizar los años de cotización más favorables en el cálculo de la pensión."
+          "stance": "ambiguous",
+          "locator": "Medidas 04 y 30, pp. 2 y 6 del PDF",
+          "evidence": "Propone que los trabajadores autónomos puedan elegir sus 25 mejores años cotizados para calcular la pensión, sin extender expresamente la medida a todos los trabajadores."
         }
       }
     },
@@ -2624,7 +2624,7 @@ export default {
         "sy": {
           "stance": "yes",
           "locator": "Garantía de servicios públicos en el medio rural",
-          "evidence": "Propone financiar el acceso a servicios esenciales en menos de media hora con independencia del municipio de residencia."
+          "evidence": "Propone garantizar los servicios públicos esenciales en un máximo de 30 minutos con independencia del lugar de residencia, mediante financiación suficiente y adaptada al territorio."
         },
         "teruel-existe": {
           "stance": "yes",
@@ -2652,12 +2652,12 @@ export default {
         "arames-eu-ms": {
           "stance": "yes",
           "locator": "Medida 6",
-          "evidence": "Propone 200 euros mensuales por menor de 18 años, con independencia de los ingresos o el empleo de sus progenitores.",
+          "evidence": "Propone una prestación universal de 200 euros por menor hasta los 18 años, con independencia de los ingresos o el empleo de sus progenitores.",
           "page": 2
         }
       },
       "topic": "Cuidados",
-      "title": "¿Debe establecerse una prestación universal de 200 euros al mes por cada menor hasta los 18 años?"
+      "title": "¿Debe establecerse una prestación universal por cada menor hasta los 18 años?"
     },
     {
       "id": "partySubsidies",
@@ -2709,10 +2709,10 @@ export default {
           "evidence": "Aprobaría una ley estatal que haga obligatorio un protocolo contra el acoso en los centros."
         },
         "compromis": {
-          "stance": "yes",
+          "stance": "ambiguous",
           "locator": "Educación · Protocolos contra el acoso, p. 11 del PDF",
           "page": 11,
-          "evidence": "Desarrollaría protocolos específicos contra el acoso escolar, la violencia digital y la difusión no consentida de imágenes íntimas."
+          "evidence": "Propone protocolos específicos contra el acoso escolar, la violencia digital y la difusión no consentida de imágenes íntimas, sin precisar un plan o protocolo estatal."
         }
       }
     },
@@ -2843,9 +2843,9 @@ export default {
           "evidence": "Propone reforzar la normativa penal y procesal frente a la creación y difusión sin consentimiento de imágenes íntimas manipuladas con IA, con sanciones proporcionadas."
         },
         "nex": {
-          "stance": "yes",
+          "stance": "ambiguous",
           "locator": "Medida 143 · Derechos e igualdad",
-          "evidence": "Propone tipificar un delito específico para las falsificaciones sexuales generadas con IA."
+          "evidence": "Propone un delito específico para la pornografía infantil generada con IA y los deepfakes sexuales, sin precisar el alcance de la difusión sin consentimiento."
         },
         "fa-andaluz": {
           "stance": "yes",
