@@ -5,28 +5,32 @@ export default {
       "color": "#0074ba",
       "url": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-2026-RECONSTRUCCION-NACIONAL.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://www.pp.es/actualidad/articulos/feijoo-presenta-el-programa-del-pp-como-la-cura-con-la-que-sanar-una-espana-herida-y-la-respuesta-para-reconstruir-el-pais/"
+      "landing": "https://www.pp.es/actualidad/articulos/feijoo-presenta-el-programa-del-pp-como-la-cura-con-la-que-sanar-una-espana-herida-y-la-respuesta-para-reconstruir-el-pais/",
+      "sourceStatus": "electoral"
     },
     "psoe": {
       "name": "PSOE",
       "color": "#d31426",
       "url": "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26-1.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://lafuerzadelagente.es/programa"
+      "landing": "https://lafuerzadelagente.es/programa",
+      "sourceStatus": "electoral"
     },
     "vox": {
       "name": "Vox",
       "color": "#528400",
       "url": "https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://www.voxespana.es/programa/otras-propuestas-de-vox/programa-electoral-de-vox-elecciones-generales-29n-2026"
+      "landing": "https://www.voxespana.es/programa/otras-propuestas-de-vox/programa-electoral-de-vox-elecciones-generales-29n-2026",
+      "sourceStatus": "electoral"
     },
     "fa": {
       "name": "Frente Amplio",
       "color": "#ba265d",
       "url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://frenteamplio.info/programa/"
+      "landing": "https://frenteamplio.info/programa/",
+      "sourceStatus": "electoral"
     },
     "fa-andaluz": {
       "name": "Frente Amplio Andaluz",
@@ -34,7 +38,8 @@ export default {
       "url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
       "label": "Programa común de Frente Amplio",
       "sharedProgram": "fa",
-      "landing": "https://frenteamplio.info/programa/"
+      "landing": "https://frenteamplio.info/programa/",
+      "sourceStatus": "electoral"
     },
     "fa-asturias": {
       "name": "Frente Ampliu por Asturies",
@@ -42,7 +47,8 @@ export default {
       "url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
       "label": "Programa común de Frente Amplio",
       "sharedProgram": "fa",
-      "landing": "https://frenteamplio.info/programa/"
+      "landing": "https://frenteamplio.info/programa/",
+      "sourceStatus": "electoral"
     },
     "frente-amplio-fronte-ampla": {
       "name": "Frente Amplio – Fronte Ampla",
@@ -50,7 +56,8 @@ export default {
       "url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
       "label": "Programa común de Frente Amplio",
       "sharedProgram": "fa",
-      "landing": "https://frenteamplio.info/gal/programa/"
+      "landing": "https://frenteamplio.info/gal/programa/",
+      "sourceStatus": "electoral"
     },
     "frente-amplio-fronte-zabala": {
       "name": "Frente Amplio – Fronte Zabala",
@@ -58,216 +65,245 @@ export default {
       "url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
       "label": "Programa común de Frente Amplio",
       "sharedProgram": "fa",
-      "landing": "https://frenteamplio.info/eu/programa/"
+      "landing": "https://frenteamplio.info/eu/programa/",
+      "sourceStatus": "electoral"
     },
     "podemos": {
       "name": "Podemos",
       "color": "#622887",
       "url": "https://pazcasaytrabajo.es/programa-electoral/programa-electoral-paz-casa-y-trabajo.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://pazcasaytrabajo.es/programa"
+      "landing": "https://pazcasaytrabajo.es/programa",
+      "sourceStatus": "electoral"
     },
     "salf": {
       "name": "Se Acabó La Fiesta",
       "color": "#b47d00",
       "url": "https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf?v=073425b9522d",
       "label": "Contrato electoral del 29N",
-      "landing": "https://www.seacabolafiesta.com/29n"
+      "landing": "https://www.seacabolafiesta.com/29n",
+      "sourceStatus": "electoral"
     },
     "bng": {
       "name": "Bloque Nacionalista Galego (BNG)",
       "color": "#12709f",
       "url": "https://xerais2026.bng.gal/wp-content/uploads/2026/11/bng-xerais-2026-programa-electoral.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://xerais2026.bng.gal/ideas/"
+      "landing": "https://xerais2026.bng.gal/ideas/",
+      "sourceStatus": "electoral"
     },
     "eaj-pnv": {
       "name": "EAJ-PNV",
       "color": "#39863d",
       "url": "https://www.eaj-pnv.eus/es/adjuntos-documentos/21765/pdf/programa-electoral-29n",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "erc": {
       "name": "Esquerra Republicana (ERC)",
       "color": "#bb7900",
-      "url": "https://www.esquerra.cat/rufian-apella-votant-socialista-decebut/",
-      "label": "Presentación oficial del programa",
-      "copy": "https://img.beteve.cat/wp-content/uploads/2026/11/ERC-programa-electoral-29-N-2026-2026-11-12.pdf"
+      "url": "https://img.beteve.cat/wp-content/uploads/2026/11/ERC-programa-electoral-29-N-2026-2026-11-12.pdf",
+      "label": "Copia íntegra del programa electoral del 29N",
+      "sourceStatus": "electoral",
+      "landing": "https://www.esquerra.cat/rufian-apella-votant-socialista-decebut/"
     },
     "junts": {
       "name": "Junts per Catalunya",
       "color": "#008477",
       "url": "https://www.tualcentre.cat/app/uploads/2026/11/PROGRAMA-ELECTORAL_JUNTS_29N.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://www.tualcentre.cat/"
+      "landing": "https://www.tualcentre.cat/",
+      "sourceStatus": "electoral"
     },
     "eh-bildu": {
       "name": "EH Bildu",
       "color": "#727e00",
       "url": "https://ehbildu.eus/media/dokumentuak/posibleegin-programa-cas.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "gbai": {
       "name": "Geroa Bai",
       "color": "#bf6517",
       "url": "https://geroabai.eus/files/2026/11/bases-politicas-29n-1.pdf",
-      "label": "Bases electorales del 29N"
+      "label": "Bases electorales del 29N",
+      "sourceStatus": "electoral"
     },
     "comuns-front-ampli": {
       "name": "Comuns – Front Ampli",
       "color": "#94358a",
       "url": "https://comuns.cat/wp-content/uploads/2026/11/Comuns-FA-Programa29N-1.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://comuns.cat/programa-comuns-front-ampli-29n/"
+      "landing": "https://comuns.cat/programa-comuns-front-ampli-29n/",
+      "sourceStatus": "electoral"
     },
     "compromis": {
       "name": "Compromís – Front Valencià",
       "color": "#c34b14",
       "url": "https://frontvalencia.org/programa-compromis-front-valencia.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "cc": {
       "name": "Coalición Canaria – Municipalistas Primero Canarias",
       "color": "#927000",
       "url": "https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf",
       "label": "Bases del programa del 29N",
-      "landing": "https://coalicioncanaria.org/cc-y-primero-canarias-presentan-diez-grandes-causas-y-cien-medidas-para-defender-canarias-en-madrid/"
+      "landing": "https://coalicioncanaria.org/cc-y-primero-canarias-presentan-diez-grandes-causas-y-cien-medidas-para-defender-canarias-en-madrid/",
+      "sourceStatus": "electoral"
     },
     "adelante-andalucia": {
       "name": "Adelante Andalucía",
       "color": "#168165",
       "url": "https://programa.adelanteandalucia.org/programa-29n-adelante-andalucia.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://programa.adelanteandalucia.org/"
+      "landing": "https://programa.adelanteandalucia.org/",
+      "sourceStatus": "electoral",
+      "extracts": [
+        "https://programa.adelanteandalucia.org/propuesta/268/",
+        "https://programa.adelanteandalucia.org/propuesta/216/",
+        "https://programa.adelanteandalucia.org/las-29/",
+        "https://programa.adelanteandalucia.org/propuesta/35/",
+        "https://programa.adelanteandalucia.org/11-derechos-de-los-animales/"
+      ]
     },
     "pacma": {
       "name": "PACMA",
       "color": "#287c34",
       "url": "https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://pacma.es/programa-electoral/"
+      "landing": "https://pacma.es/programa-electoral/",
+      "sourceStatus": "electoral"
     },
     "mundo-justo": {
       "name": "Por un Mundo Más Justo",
       "color": "#477c48",
       "url": "https://www.porunmundomasjusto.es/wp-content/uploads/2026/11/Castellano.pdf",
       "label": "Programa electoral del 29N",
-      "landing": "https://www.porunmundomasjusto.es/programa-electoral-2026/"
+      "landing": "https://www.porunmundomasjusto.es/programa-electoral-2026/",
+      "sourceStatus": "electoral"
     },
     "partido-autonomos": {
       "name": "Partido Autónomos",
       "url": "https://www.partidoautonomos.es/?download_id=9181&sdm_process_download=1",
       "label": "Programa electoral del 29N",
-      "landing": "https://www.partidoautonomos.es/sdm_downloads/nuestro-programa-electoral-elecciones-2026/"
+      "landing": "https://www.partidoautonomos.es/sdm_downloads/nuestro-programa-electoral-elecciones-2026/",
+      "sourceStatus": "electoral"
     },
     "pfac": {
       "name": "Feministas al Congreso",
       "color": "#64348b",
       "url": "https://www.feministasalcongreso.es/wp-content/uploads/2026/11/PROGRAMA_ELECTORAL.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "ie": {
       "name": "Iustitia Europa",
       "color": "#9c202d",
       "url": "https://iustitiaeuropa.es/img/bloques/documentos/descarga-aqui-tu-contrato-00030.pdf",
       "label": "Contrato electoral adoptado para el 29N",
-      "landing": "https://iustitiaeuropa.es/contrato-electoral/"
+      "landing": "https://iustitiaeuropa.es/contrato-electoral/",
+      "sourceStatus": "electoral"
     },
     "ph": {
       "name": "Partido Humanista",
       "color": "#c05b20",
       "url": "https://partidohumanista.es/Documentos/Programas/Programa%20Generales%202026.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "fe-jons": {
       "name": "Falange Española de las JONS",
       "color": "#a82029",
       "url": "https://falange.es/wp-content/uploads/2026/11/FEDELASJONS_ProgramaElectoral_29NGenerales2026.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "fo": {
       "name": "Frente Obrero",
       "color": "#ae232e",
-      "url": "https://frenteobrero.es/documentos/programa-frente-obrero.pdf",
-      "label": "Programa político adoptado por la campaña del 29N",
-      "landing": "https://frenteobrero.es/quienes-somos/#programa"
+      "sourceStatus": "excluded"
     },
     "upc": {
       "name": "Unidad del Pueblo Canario",
-      "url": "https://unidadpueblocanario.org/documentos/manifiesto-upc.pdf",
-      "label": "Manifiesto electoral del 29N"
+      "sourceStatus": "pending"
     },
     "upn-pp": {
       "name": "UPN–PP",
       "color": "#c32337",
       "url": "https://upn-pp.es/",
-      "label": "Compromisos electorales del 29N"
+      "label": "Compromisos electorales del 29N",
+      "sourceStatus": "electoral"
     },
     "sy": {
       "name": "Soria ¡YA!",
       "color": "#8e253f",
       "url": "https://soriaya.org/programa-generales-2026/",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "teruel-existe": {
       "name": "Teruel Existe",
       "color": "#528122",
       "url": "https://teruelexiste.info/wp-content/uploads/2026/11/Programa_Teruel_Existe_Completo_29N.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "nex": {
       "name": "Nuevo Extremeñismo – Adelante Extremadura",
       "url": "https://www.nuevoext.es/descargas/Programa-Electoral-Generales-29N.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "d21": {
       "name": "Democracia para el Siglo XXI",
       "url": "https://mi.democracia21.es/docs/programa/programa-democracia21.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "agenda-valenciana": {
       "name": "Agenda Valenciana",
       "url": "https://www.agendavalenciana.org/programa.html",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "arames-eu-ms": {
       "name": "Ara Més – Front Ampli",
       "color": "#397246",
       "url": "https://media.timtul.com/media/web_mespermallorca/ProgramaElectoral29N_20261116175411.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "cnv": {
       "name": "Convergents",
       "url": "https://www.convergents.org/_files/ugd/d24b0b_2c84e86795954481a948f644038a7cb3.pdf",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "cha-fa": {
       "name": "Chunta Aragonesista – Frente Amplio Aragón",
       "color": "#875497",
-      "url": "https://www.iuaragon.com/la-reclamacion-de-infraestructuras-y-el-derecho-a-una-vivienda-digna-principales-medidas-del-programa-electoral-de-cha-frente-amplio/",
-      "label": "Extracto oficial del programa del 29N"
+      "sourceStatus": "excluded"
     },
     "p-alantre": {
       "name": "Proyecto Alantre",
       "url": "https://ya-toca.com/programa/",
-      "label": "Programa electoral del 29N"
+      "label": "Programa electoral del 29N",
+      "sourceStatus": "electoral"
     },
     "rrb": {
       "name": "Renacer Renaixer",
-      "url": "https://renacerenaixer.es/",
-      "label": "Programa electoral en su web"
+      "sourceStatus": "pending"
     },
     "d-r-g": {
       "name": "Drago Canarias",
       "color": "#54832f",
-      "url": "https://www.noticias.dragocanarias.com/drago-canarias-dio-inicio-a-su-campana-electoral-en-ofra-y-jinamar-y-puso-el-foco-en-los-barrios/",
-      "label": "Extracto oficial del programa del 29N"
+      "sourceStatus": "excluded"
     },
     "escanos-en-blanco": {
       "name": "Escaños en Blanco",
       "color": "#706c69",
-      "url": "https://escanos.org/conocenos/programa-electoral-de-escanos-en-blanco/",
-      "label": "Programa electoral de artículo único, reiterado en el 29N"
+      "sourceStatus": "pending"
     },
     "alhora": {
       "name": "Alhora"
@@ -293,8 +329,7 @@ export default {
     },
     "fia": {
       "name": "Federación de los Independientes de Aragón",
-      "url": "https://www.fia-independientes.es/ELECCIONES-29N/",
-      "label": "Programas provinciales del 29N"
+      "sourceStatus": "pending"
     },
     "lib": {
       "name": "Liberación Canaria"
@@ -316,9 +351,7 @@ export default {
     },
     "eguzkilore": {
       "name": "Eguzkilore",
-      "url": "https://www.eguzkilore-na.org/wp-content/uploads/2026/10/eguzkilore-cas-1024x724.jpeg",
-      "label": "Folleto de propuestas del 29N",
-      "landing": "https://www.eguzkilore-na.org/2026/10/27/29n-a29-gracias-por-tu-confianza-eskerrik-asko-zure-konfiantzagatik/"
+      "sourceStatus": "pending"
     },
     "vlc": {
       "name": "Valencia Unida"
@@ -382,13 +415,6 @@ export default {
           "locator": "Vivienda, p. 5",
           "page": 5,
           "evidence": "Propone declarar zonas tensionadas en los municipios con arreglo a la Ley de Vivienda para controlar los precios del alquiler."
-        },
-        "upc": {
-          "stance": "yes",
-          "locator": "Manifiesto electoral, eje 5, p. 3 del PDF",
-          "page": 3,
-          "evidence": "Defiende regular el precio de los alquileres en zonas tensionadas.",
-          "url": "https://unidadpueblocanario.org/documentos/manifiesto-upc.pdf#page=3"
         },
         "cnv": {
           "stance": "no",
@@ -1642,12 +1668,6 @@ export default {
           "page": 58,
           "evidence": "Propone atención dental básica gratuita para toda la población y más prestaciones para personas vulnerables."
         },
-        "fo": {
-          "stance": "yes",
-          "locator": "Sanidad, propuesta 4, p. 42",
-          "page": 42,
-          "evidence": "Propone crear la estructura sanitaria necesaria para ofrecer tratamiento bucodental gratuito."
-        },
         "ph": {
           "stance": "yes",
           "locator": "Sanidad, propuesta 4, p. 11",
@@ -1728,12 +1748,6 @@ export default {
           "locator": "Vivienda · Protección en situaciones de vulnerabilidad",
           "page": 5,
           "evidence": "Propone suspender los desahucios de personas vulnerables por motivos económicos hasta que se les ofrezca una alternativa."
-        },
-        "fo": {
-          "stance": "yes",
-          "locator": "Vivienda, p. 46",
-          "page": 46,
-          "evidence": "Plantea paralizar los desahucios de familias trabajadoras vulnerables que no puedan pagar el alquiler o la hipoteca hasta encontrar una alternativa habitacional."
         },
         "compromis": {
           "stance": "yes",
@@ -1977,12 +1991,6 @@ export default {
           "stance": "yes",
           "locator": "Medida 43 · Política exterior",
           "evidence": "Propone un plan de salida progresiva de la OTAN."
-        },
-        "fo": {
-          "stance": "yes",
-          "locator": "Soberanía nacional, propuesta 2, p. 11",
-          "page": 11,
-          "evidence": "Propone una salida inmediata de la OTAN."
         },
         "fe-jons": {
           "stance": "yes",
@@ -2268,12 +2276,6 @@ export default {
           "locator": "§1.3 · Pensiones",
           "page": 8,
           "evidence": "Propone aumentar las pensiones mínimas hasta al menos 1.220 euros y vincular su cuantía y actualización al salario mínimo interprofesional."
-        },
-        "cha-fa": {
-          "stance": "yes",
-          "locator": "Líneas principales del programa, derechos laborales y pensiones",
-          "evidence": "Las líneas del programa proponen fijar por ley una pensión mínima equivalente al salario mínimo.",
-          "url": "https://www.chunta.org/la-reclamacion-de-infraestructuras-y-el-derecho-a-una-vivienda-digna-principales-medidas-del-programa-electoral-de-cha-frente-amplio-aragon/"
         }
       }
     },
@@ -2438,13 +2440,6 @@ export default {
           "locator": "Medida 27",
           "evidence": "Propone dar cobertura jurídica a Canarias y a sus municipios para limitar los usos turísticos si existe presión acreditada sobre la vivienda residencial."
         },
-        "upc": {
-          "stance": "yes",
-          "locator": "Manifiesto electoral, ejes 5 y 7, p. 3 del PDF",
-          "page": 3,
-          "evidence": "Plantea limitar el efecto de la vivienda vacacional y poner límites efectivos al crecimiento turístico.",
-          "url": "https://unidadpueblocanario.org/documentos/manifiesto-upc.pdf#page=3"
-        },
         "pfac": {
           "stance": "yes",
           "locator": "Medida 6, p. 1",
@@ -2458,13 +2453,6 @@ export default {
       "topic": "Instituciones",
       "title": "¿Reducir a 16 años la edad mínima para votar?",
       "positions": {
-        "upc": {
-          "stance": "yes",
-          "locator": "Manifiesto electoral, eje 16, p. 5 del PDF",
-          "page": 5,
-          "evidence": "Incluye el voto a los 16 años entre sus medidas de participación democrática.",
-          "url": "https://unidadpueblocanario.org/documentos/manifiesto-upc.pdf#page=5"
-        },
         "podemos": {
           "stance": "yes",
           "locator": "Medida 413",
@@ -2478,12 +2466,6 @@ export default {
       "topic": "Justicia",
       "title": "¿Prohibir los indultos en condenas por corrupción política?",
       "positions": {
-        "fo": {
-          "stance": "yes",
-          "locator": "Justicia y corrupción, medida 4, p. 59",
-          "page": 59,
-          "evidence": "Propone prohibir los indultos en casos de corrupción política y delitos relacionados."
-        },
         "vox": {
           "stance": "yes",
           "locator": "Medida 103",
@@ -2546,12 +2528,6 @@ export default {
           "stance": "yes",
           "locator": "Medida 04",
           "evidence": "Propone utilizar los años de cotización más favorables en el cálculo de la pensión."
-        },
-        "fo": {
-          "stance": "yes",
-          "locator": "Pensiones, medida 3, p. 49",
-          "page": 49,
-          "evidence": "Propone calcular la pensión mediante la media de los mejores años cotizados."
         }
       }
     },
@@ -2587,12 +2563,6 @@ export default {
       "topic": "Comercio exterior",
       "title": "¿Debe España apoyar el acuerdo comercial entre la Unión Europea y Mercosur?",
       "positions": {
-        "eguzkilore": {
-          "stance": "no",
-          "locator": "Folleto oficial del 29N, medida 9",
-          "url": "https://www.eguzkilore-na.org/wp-content/uploads/2026/10/eguzkilore-cas-1024x724.jpeg",
-          "evidence": "Propone impedir la aprobación del acuerdo con Mercosur."
-        },
         "bng": {
           "stance": "no",
           "locator": "Sector agrario, p. 48",
@@ -2623,12 +2593,6 @@ export default {
       "topic": "Vivienda",
       "title": "¿Deben conservar de forma permanente su calificación las viviendas protegidas construidas con fondos públicos?",
       "positions": {
-        "eguzkilore": {
-          "stance": "yes",
-          "locator": "Folleto oficial del 29N, medida 3",
-          "url": "https://www.eguzkilore-na.org/wp-content/uploads/2026/10/eguzkilore-cas-1024x724.jpeg",
-          "evidence": "Propone más construcción pública de vivienda protegida y que esas viviendas no puedan descalificarse."
-        },
         "nex": {
           "stance": "yes",
           "locator": "Medida 8, p. 1 impresa",
@@ -2646,13 +2610,6 @@ export default {
           "locator": "Medida 41 · Plan Estatal de Vivienda 2026–2030",
           "page": 28,
           "evidence": "Destinaría recursos estatales a construir viviendas públicas o protegidas con carácter permanente."
-        },
-        "upc": {
-          "stance": "yes",
-          "locator": "Manifiesto electoral, eje 5, p. 3 del PDF",
-          "page": 3,
-          "evidence": "Propone ampliar el parque público de viviendas con protección permanente.",
-          "url": "https://unidadpueblocanario.org/documentos/manifiesto-upc.pdf#page=3"
         }
       }
     },
@@ -2683,18 +2640,6 @@ export default {
           "stance": "yes",
           "locator": "Compromisos, Más oportunidades y mejores empleos",
           "evidence": "Propone una cuota de cero euros durante los dos primeros años por cuenta propia."
-        }
-      }
-    },
-    {
-      "id": "emptySeats",
-      "topic": "Instituciones",
-      "title": "¿Apoyas que una candidatura deje sin ocupar los escaños que consiga si se ha presentado con ese compromiso?",
-      "positions": {
-        "escanos-en-blanco": {
-          "stance": "yes",
-          "locator": "Artículo único de su programa electoral",
-          "evidence": "Sus candidaturas se comprometen a no tomar posesión de los escaños que obtengan ni a cobrar por ellos."
         }
       }
     },
@@ -3075,21 +3020,6 @@ export default {
       "local": true
     },
     {
-      "id": "canaryTouristBedPause",
-      "topic": "Turismo",
-      "title": "¿Suspender temporalmente la creación de nuevas plazas e instalaciones turísticas en Canarias?",
-      "positions": {
-        "upc": {
-          "stance": "yes",
-          "locator": "Manifiesto electoral, eje 8, p. 4 del PDF",
-          "page": 4,
-          "evidence": "Propone una moratoria de nuevas instalaciones y camas turísticas.",
-          "url": "https://unidadpueblocanario.org/documentos/manifiesto-upc.pdf#page=4"
-        }
-      },
-      "local": true
-    },
-    {
       "id": "catalanFiscalAgreement",
       "topic": "Organización territorial",
       "title": "¿Debe establecerse para Cataluña un concierto económico comparable al del País Vasco?",
@@ -3152,59 +3082,6 @@ export default {
           "stance": "yes",
           "locator": "Bloque 1, Financiación Autonómica y Deuda Histórica",
           "evidence": "Reclama que el Estado asuma y compense la deuda valenciana que atribuye a la falta de reforma del modelo autonómico."
-        }
-      }
-    },
-    {
-      "id": "valencianFloodWorks",
-      "topic": "Infraestructuras",
-      "title": "¿Debe el Estado convocar un concurso internacional de ingeniería para intervenir en los barrancos del Poyo y del Carraixet?",
-      "local": true,
-      "positions": {
-        "rrb": {
-          "stance": "yes",
-          "locator": "Bloque «Programa» de las elecciones de 2026",
-          "evidence": "El bloque electoral pide que el Gobierno central convoque un concurso de ingeniería para ambos barrancos."
-        }
-      }
-    },
-    {
-      "id": "canaryFlightCap",
-      "topic": "Transporte",
-      "title": "¿Deben fijarse límites al precio de los billetes de avión en Canarias?",
-      "local": true,
-      "positions": {
-        "d-r-g": {
-          "stance": "yes",
-          "locator": "Presentación del programa, medidas de transporte",
-          "evidence": "El extracto oficial del programa incluye limitar el precio de los billetes de avión."
-        }
-      }
-    },
-    {
-      "id": "valencianBiomethane",
-      "topic": "Energía",
-      "title": "¿Debe cancelarse el proyecto de planta de biometano de Llíria?",
-      "local": true,
-      "positions": {
-        "rrb": {
-          "stance": "yes",
-          "locator": "Bloque «Programa» de las elecciones de 2026",
-          "evidence": "La candidatura propone retirar el proyecto de planta de biometano en Llíria."
-        }
-      }
-    },
-    {
-      "id": "navarraNewHighSpeed",
-      "topic": "Transporte",
-      "title": "¿Debe permitirse construir nuevos trazados ferroviarios de alta velocidad en Navarra?",
-      "local": true,
-      "positions": {
-        "eguzkilore": {
-          "stance": "no",
-          "locator": "Folleto oficial del 29N, medida 6",
-          "url": "https://www.eguzkilore-na.org/wp-content/uploads/2026/10/eguzkilore-cas-1024x724.jpeg",
-          "evidence": "Propone impedir nuevos trazados de alta velocidad y destinar esos fondos al tren de cercanías y rural."
         }
       }
     },

@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import programas from '../data/programas.js';
+import { validarFuentesElectorales } from '../data/validacion.js';
+
+const errores = validarFuentesElectorales(programas);
+if (errores.length) throw new Error(errores.join('\n'));
 ---
 <BaseLayout>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -43,7 +48,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="section-heading"><h2 id="privacy-title">Transparencia</h2><p>Tus respuestas, tu circunscripción y tus resultados se quedan en la pestaña. Puedes consultar el <a href="https://github.com/diego-de-sousa/programa-por-programa-29n">Código fuente</a> en GitHub.</p></div>
       <div class="method-grid">
         <article><h3>Privacidad</h3><p>El cuestionario hace los cálculos en tu dispositivo. No envía las respuestas ni usa analítica, cookies o almacenamiento persistente. Al recargar o cerrar la página se borran. Si abres un programa o un sondeo, tu navegador visita la web externa correspondiente.</p></article>
-        <article><h3>Fuentes y alcance</h3><p>Las medidas vienen de programas y documentos electorales publicados por las candidaturas. Cada comparación incluye una referencia. Una pregunta solo recoge la medida que describe, y distintos programas pueden tener distinta cobertura.</p></article>
+        <article><h3>Fuentes y alcance</h3><p>Solo usamos el texto de los programas electorales del 29N: originales, copias íntegras o extractos directos. No usamos noticias de campaña ni programas cuya vigencia electoral no esté acreditada. El BOE solo identifica las candidaturas.</p></article>
         <article><h3>Criterio editorial</h3><p>La selección de temas y la redacción son decisiones editoriales. En «Toda España» puedes añadir medidas de territorios concretos. Los resultados describen las respuestas comparables de esta selección y puedes revisar cómo se ha contado cada una.</p></article>
       </div>
     </section>

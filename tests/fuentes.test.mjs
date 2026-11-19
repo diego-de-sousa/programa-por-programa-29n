@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import { spawnSync } from 'node:child_process';
 import roster from '../src/data/candidaturas.js';
 import programs from '../src/data/programas.js';
-import { validarDatos, recogerEnlaces } from '../src/data/validacion.js';
+import { validarDatos, validarFuentesElectorales, recogerEnlaces } from '../src/data/validacion.js';
 import { comprobarEnlaces, formatearInforme, main } from '../scripts/comprobar-enlaces.mjs';
 import { solicitarFuente } from '../scripts/solicitar-fuente.mjs';
 import { EventEmitter } from 'node:events';
@@ -25,6 +25,23 @@ test('datos reales y excepciones legítimas son válidos sin red', () => {
   assert.deepEqual(validarDatos(roster, programs), []);
   const f = fixture();
   assert.deepEqual(validarDatos(f.roster, f.programs), []);
+});
+
+test('solo se publican posturas con respaldo documental electoral directo', () => {
+  for (const id of ['fo', 'cha-fa', 'd-r-g', 'upc', 'rrb', 'escanos-en-blanco', 'eguzkilore']) {
+    assert.ok(programs.parties[id], id);
+    assert.equal(programs.parties[id].url, undefined, id);
+    assert.ok(!programs.questions.some(q => Object.hasOwn(q.positions, id)), id);
+  }
+  assert.match(programs.parties.erc.url, /\.pdf$/);
+  assert.deepEqual(validarFuentesElectorales(programs), []);
+  const f = fixture();
+  f.programs.parties.a.sourceStatus = 'electoral';
+  const position = f.programs.questions[0].positions.a;
+  position.evidence = 'Se compromete a adoptar la medida.';
+  assert.deepEqual(validarFuentesElectorales(f.programs), []);
+  position.url = 'https://example.org/landing';
+  assert.deepEqual(validarFuentesElectorales(f.programs), ['Posición q/a: fuente electoral no admitida']);
 });
 
 test('identificadores duplicados, posiciones desconocidas y postura inválida se detectan', () => {

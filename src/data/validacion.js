@@ -49,6 +49,37 @@ export function validarDatos(roster, programs) {
   return errors;
 }
 
+export function validarFuentesElectorales(programs) {
+  const errors = [];
+  const admitted = new Map();
+  const documentUrl = value => {
+    const url = urlPublica(value);
+    if (!url) return null;
+    url.hash = '';
+    return url.href;
+  };
+  for (const [id, party] of Object.entries(programs.parties)) {
+    const { sourceStatus, url, extracts = [] } = party;
+    if (sourceStatus === 'electoral') {
+      const documents = [url, ...extracts].map(documentUrl);
+      if (documents.includes(null)) errors.push(`Programa ${id}: documento electoral inválido`);
+      admitted.set(id, new Set(documents.filter(Boolean)));
+    } else if (url || extracts.length || ![undefined, 'pending', 'excluded'].includes(sourceStatus)) {
+      errors.push(`Programa ${id}: estado documental inválido`);
+    }
+  }
+  for (const question of programs.questions) {
+    for (const [id, position] of Object.entries(question.positions)) {
+      const url = documentUrl(position.url ?? programs.parties[id]?.url);
+      if (!admitted.get(id)?.has(url)) errors.push(`Posición ${question.id}/${id}: fuente electoral no admitida`);
+      if (typeof position.evidence !== 'string' || !position.evidence.trim()) {
+        errors.push(`Posición ${question.id}/${id}: pasaje sin resumen`);
+      }
+    }
+  }
+  return errors;
+}
+
 export function recogerEnlaces(roster, programs) {
   const links = new Set();
   const add = value => {

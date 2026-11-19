@@ -50,6 +50,12 @@ Para publicar la web, configura `pnpm build` como comando de compilación y `dis
 
 > **Privacidad:** las respuestas y los resultados se quedan en la pestaña. El cuestionario no usa analítica, cookies ni almacenamiento persistente.
 
+### Criterio documental
+
+Solo se admite el texto del programa electoral del 29N de la candidatura: un original, una copia íntegra, un extracto directo o un contrato o lista de compromisos publicados como programa de esa campaña. Una noticia o nota de presentación no equivale al programa, aunque la publique la candidatura. Un documento genérico o compartido requiere acreditar su adopción para esa elección y candidatura. El BOE se usa solo para identificar las listas.
+
+Cada registro cita la página, medida o apartado y resume el pasaje sin atribuirle más de lo que dice. Antes de añadir o cambiar una codificación, una segunda persona debe contrastarla por separado con el pasaje y el enunciado. Si discrepan, se conserva la evidencia y no se puntúa hasta resolver la interpretación. Los documentos pendientes de confirmar no aportan posiciones. Una URL admitida no certifica por sí sola todas sus interpretaciones.
+
 ## Mapa del repositorio
 
 Astro genera el HTML y prepara los recursos. El cuestionario sigue funcionando con JavaScript en el navegador, sin API ni base de datos.

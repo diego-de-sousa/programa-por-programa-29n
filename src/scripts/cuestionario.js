@@ -85,11 +85,13 @@ function sourceLink(url, text) {
 
 function programLinks(metadata) {
   if (!metadata?.url) return "";
-  const primary = metadata.landing ?? metadata.url;
-  const links = [sourceLink(primary, metadata.label)];
-  if (metadata.landing && metadata.landing !== metadata.url) links.push(sourceLink(metadata.url, "Documento"));
-  if (metadata.copy) links.push(sourceLink(metadata.copy, "Copia del programa"));
-  return links.join(" · ");
+  return sourceLink(metadata.url, metadata.label);
+}
+
+function programStatus(metadata) {
+  if (metadata?.sourceStatus === "pending") return "Documento pendiente de verificación para el 29N.";
+  if (metadata?.sourceStatus === "excluded") return "Sin fuente admitida: la fuente localizada no es el programa electoral del 29N.";
+  return "Programa electoral del 29N no localizado.";
 }
 
 function renderCatalogue() {
@@ -130,7 +132,7 @@ function renderCatalogue() {
       const hasPositions = questions.some(question => question.positions[item.id]);
       const detail = metadata?.url
         ? `${programLinks(metadata)}${hasPositions ? "" : " · Sin medidas puntuadas"}`
-        : "Programa 29N no localizado en su web";
+        : programStatus(metadata);
       return `<li><div class="catalogue-name">${escapeHtml(labelFor(item))}</div><div class="catalogue-status">${detail}</div></li>`;
     }).join("");
   }
@@ -231,20 +233,15 @@ function renderEvidence(rows, metadata, type, name, loss = 0) {
     <summary><span class="evidence-count">${rows.length}</span> ${name}${loss ? ` <span class="loss">−${points.format(loss * rows.length)} pp</span>` : ""}</summary>
     ${loss ? "<p class='loss-note'>Puntos porcentuales que se pierden respecto a coincidir en estas medidas.</p>" : ""}
     <ul class="evidence">${rows.map(({ question, position, response }) => {
-      const original = position.url ?? metadata.url;
-      const official = metadata.landing ?? metadata.url;
-      const verifiedCopy = metadata.copy;
-      const document = verifiedCopy && (original === verifiedCopy || original === official) ? verifiedCopy : original;
-      const location = document === verifiedCopy ? `Copia del programa · ${position.locator}` : position.locator;
-      const backup = official !== document ? sourceLink(official, "Web de la candidatura") : "";
-      const links = [sourceLink(withPage(document, position.page), location), backup].filter(Boolean);
+      const document = position.url ?? metadata.url;
+      const link = sourceLink(withPage(document, position.page), position.locator);
       const userAnswer = responsesLabel[response] ?? "Sin respuesta";
       return `<li><div class="evidence-title"><strong>${escapeHtml(question.title)}</strong>
         ${loss ? `<span class="loss">−${points.format(loss)} pp</span>` : ""}</div>
         <dl class="answer-compare"><div><dt>Tu respuesta</dt><dd>${userAnswer}</dd></div>
         <div><dt>Programa</dt><dd>${responsesLabel[position.stance]}</dd></div></dl>
         <p>${escapeHtml(position.evidence)}</p>
-        <p class="evidence-source">${links.join(" · ")}</p></li>`;
+        <p class="evidence-source">${link}</p></li>`;
     }).join("")}</ul></details>`;
 }
 
@@ -265,7 +262,7 @@ function renderResultCard({ item, comparable, matching, disagreements, omitted, 
     ? `${comparable.length} ${comparable.length === 1 ? "respuesta comparable" : "respuestas comparables"}${comparable.length < 3 ? " · Muestra reducida" : ""}`
     : omitted.length
       ? "Sin respuestas comparables."
-      : metadata?.url ? "Sin medidas verificadas para estas preguntas." : "Programa del 29N no verificado.";
+      : metadata?.url ? "Sin medidas verificadas para estas preguntas." : programStatus(metadata);
   const color = metadata?.color ?? "#8b8173";
   const loss = comparable.length ? 100 / comparable.length : 0;
   return `<article class="result-card" style="--party:${escapeHtml(color)}">
